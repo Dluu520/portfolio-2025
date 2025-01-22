@@ -55,9 +55,9 @@ export default function Home() {
         <AboutMe />
         <Education />
       </div>
+      <Skills />
       <Experience />
       <Projects />
-      <Skills />
       <ContactMe />
       <Footer />
     </main>

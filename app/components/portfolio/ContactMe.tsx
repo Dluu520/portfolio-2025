@@ -1,5 +1,6 @@
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
+const myEmployee = "http://localhost:3000/api/recruiters";
 
 type FormData = {
   name: string;
@@ -18,50 +19,57 @@ interface Employee {
 }
 
 export default function ContactMe() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  const [status, setStatus] = useState<string>("");
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
+  const [editEmployee, setEditEmployee] = useState<Employee | null>(null);
+  const [newEmail, setNewEmail] = useState("");
+  const [newUsername, setNewUsername] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const newEmployee = { email, name, message, subject };
     try {
-      const response = await fetch("/api/contact", {
+      const res = await fetch(`${myEmployee}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newEmployee),
       });
 
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setStatus("Failed to send message. Admin notified.");
+      if (!res.ok) {
+        console.error("Error submitting data");
+        return;
       }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus("An error occurred while sending the message.");
+
+      console.log("Successfully submitted");
+
+      // Fetch the updated list of employees
+      const updatedEmployees = await fetch(`${myEmployee}`).then((res) =>
+        res.json()
+      );
+
+      // Update the state with the new list and visually refresh the component
+      setEmployees(updatedEmployees);
+
+      // Clear form fields
+      setEmail("");
+      setName("");
+      setSubject("");
+      setMessage("");
+    } catch (err) {
+      console.error("Catch error: ", err);
     }
   };
 
   return (
     <div className="h-screen  items-center w-full   flex flex-col justify-center ">
-      <h1 className="text-4xl underline font-bold ">Let's talk!</h1>
+      <h1 className="text-4xl underline font-bold text-white">Let's talk!</h1>
       <form className="w-full md:w-[50%] p-6 space-y-4" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block mb-1 font-semibold">
@@ -72,8 +80,8 @@ export default function ContactMe() {
             id="name"
             name="name"
             className="w-full px-4 py-2 border rounded-lg"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -86,8 +94,8 @@ export default function ContactMe() {
             id="email"
             name="email"
             className="w-full px-4 py-2 border rounded-lg"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -100,8 +108,8 @@ export default function ContactMe() {
             id="subject"
             name="subject"
             className="w-full px-4 py-2 border rounded-lg"
-            value={formData.subject}
-            onChange={handleChange}
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
             required
           />
         </div>
@@ -113,8 +121,8 @@ export default function ContactMe() {
             id="message"
             name="message"
             className="w-full px-4 py-2 border rounded-lg"
-            value={formData.message}
-            onChange={handleChange}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             required
           />
         </div>

@@ -51,9 +51,9 @@ function Experience() {
     setExpandedIndex(index === expandedIndex ? null : index); // Toggle expansion
   };
   return (
-    <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 bg-[linear-gradient(35deg,_#f5f5f5_50%,_#808080_50%)]">
-      <h1 className="text-4xl underline font-bold">Experience</h1>
-      <span className={`${styles.timeline}`}>
+    <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 mt-32 bg-[linear-gradient(35deg,_#f5f5f5_50%,_#1a202c_50%)]">
+      <h1 className="text-4xl underline font-bold text-white">Experience</h1>
+      <span className={`${styles.timeline} `}>
         {reversedList.map((exp, index) => {
           const positionClass = index % 2 === 0 ? styles.left : styles.right;
           const isExpanded = expandedIndex === index; // Check if the current item is expanded
@@ -63,16 +63,20 @@ function Experience() {
               key={index}
               className={`${styles.container} ${positionClass} ${
                 isExpanded ? styles.expanded : ""
-              }`}
+              } `}
               onClick={() => handleExpand(index)}
             >
               <div
-                className={`${styles.content} ${isExpanded ? "expanded" : ""}`}
+                className={`${styles.content} ${
+                  isExpanded ? "expanded" : ""
+                } text-[#2c3e50] `}
               >
-                <h2>
+                <h2 className="text-[#2c3e50]">
                   {exp.started} - {exp.ended === -1 ? "Current" : exp.ended}
                 </h2>
-                <h3 className="font-bold text-lg">{exp.position}</h3>
+                <h3 className="font-bold text-lg text-[#2c3e50]">
+                  {exp.position}
+                </h3>
                 <ol>
                   {exp.jd.map((each, jdIndex) => (
                     <li key={jdIndex}>{each}</li>

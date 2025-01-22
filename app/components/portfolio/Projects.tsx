@@ -33,13 +33,13 @@ function Projects() {
   return (
     <div
       id="projects"
-      className="flex flex-wrap justify-center items-center p-10 md:p-52 gap-10 bg-gray-900 "
+      className="flex flex-wrap justify-center items-center p-10 md:p-52 gap-10 bg-[linear-gradient(35deg,_#1a202c_50%,_#f5f5f5_50%)]"
     >
-      <h1 className="text-4xl underline font-bold text-white">Projects</h1>
+      <h1 className="text-4xl underline font-bold text-[#1a202c]">Projects</h1>
       {projects.map((prj, index) => {
         return (
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 rounded-lg bg-white w-full shadow-lg p-4 "
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 rounded-lg border border-[#1a202c] bg-white w-full shadow-lg p-4 text-[#1a202c] "
             key={index}
           >
             <Image

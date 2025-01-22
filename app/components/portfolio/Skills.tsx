@@ -20,17 +20,31 @@ const skills = [
   { name: "Firebase" },
   { name: "PocketBase" },
   { name: "API" },
+  { name: "REST API" },
+  { name: "MySQL" },
   { name: "SQL" },
   { name: "Figma" },
   { name: "Git" },
-  { name: "Data Analysis" },
+  { name: "Data Analyst" },
+  { name: "Data Entry" },
   { name: "UI/UX" },
+  { name: "Customer Service" },
+  { name: "Critical Thinking" },
+  { name: "Problem Solving" },
+  { name: "Interpersonal Communication" },
+  { name: "Adaptability" },
+  { name: "Receptionist" },
+  { name: "Information Technology" },
+  { name: "Word" },
+  { name: "Excel" },
+  { name: "PowerPoint" },
+  { name: "FullStack" },
 ];
 function Skills() {
   return (
     <div
       id="skills"
-      className="snap-center h-screen flex flex-col justify-center items-center p-10 md:p-32 gap-10 inset-0 bg-gradient-to-br from-blue-500 to-green-500 opacity-80"
+      className="snap-center flex flex-col justify-center items-center  gap-10 "
     >
       <h1 className="text-4xl underline font-bold">Skills</h1>
       <div className="justify-center overflow-hidden flex flex-wrap gap-6 w-full md:w-[80%] lg:w-[50%] text-white">

@@ -15,22 +15,22 @@ function Hero() {
           alt="Hero Image"
         /> */}
       <div className="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex flex-col items-center w-full p-20 gap-4">
-        <h1 className=" text-4xl md:text-8xl underline text-white">Dong Luu</h1>
-        <h3 className="text-lg md:text-2xl text-white ">Software Engineer</h3>
+        <h1 className=" text-4xl md:text-8xl underline ">Dong Luu</h1>
+        <h3 className="text-lg md:text-2xl ">Software Engineer</h3>
         <a href="Dong_Luu_Resume.pdf" download="Dong_Luu_Resume.pdf">
-          <button className="text-center text-sm border-2 p-2 rounded-lg  hover:cursor-pointer text-white">
+          <button className="text-center text-sm border-2 p-2 rounded-lg  hover:cursor-pointer ">
             Download Resume
           </button>
         </a>
         <a href="mailto:dongluudev@gmail.com" className="font-bold">
-          <button className="text-center text-sm border-2 p-2 rounded-lg  hover:cursor-pointer text-white">
+          <button className="text-center text-sm border-2 p-2 rounded-lg  hover:cursor-pointer">
             Contact me
           </button>
         </a>
       </div>
       <a
         href="#about"
-        className="absolute bottom-[0%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-white  animate-bounce "
+        className="absolute bottom-[0%] left-[50%] translate-y-[-50%] translate-x-[-50%]  animate-bounce "
       >
         <span className={`${styles.triangleDown}`}></span>
       </a>
