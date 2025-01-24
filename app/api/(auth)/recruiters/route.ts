@@ -3,7 +3,8 @@ import Recruiter from "@/app/lib/modals/recruiter";
 import { NextRequest, NextResponse } from "next/server"; // Importing types for the request and response in Next.js API routes
 import { Types } from "mongoose"; // Importing Types from mongoose for handling MongoDB types
 
-// this checks validation of ObjectID through mongoDb's auto generation of objectID
+// Disable require() import rule for mongoose Types
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const ObjectId = require("mongoose").Types.ObjectId;
 
 // GET request to fetch all recruiters
@@ -20,11 +21,10 @@ export const GET = async () => {
       status: 500,
     });
   }
-  // Default response in case of any error
   return new NextResponse("This is default response in case of any error.");
 };
 
-// POST request to create a new user
+// POST request to create a new recruiter
 export const POST = async (request: NextRequest) => {
   try {
     // Get the request body (user data)
@@ -34,9 +34,8 @@ export const POST = async (request: NextRequest) => {
     await connect();
     // Create a new Recruiter instance with the received data
     const newRecruiters = new Recruiter(body);
-    // Save the new user to the database
+    // Save the new recruiter to the database
     await newRecruiters.save();
-    // Return a success response with the new user data
     return new NextResponse(
       JSON.stringify({
         message: "Recruiter is created: ",
@@ -48,10 +47,16 @@ export const POST = async (request: NextRequest) => {
     console.log("Error in creating recruiters " + error.message, {
       status: 500,
     });
+    return new NextResponse(
+      JSON.stringify({
+        message: "Error in creating recruiters: " + error.message,
+      }),
+      { status: 500 }
+    );
   }
 };
 
-// PATCH request to update an existing user
+// PATCH request to update an existing recruiter
 export const PATCH = async (request: NextRequest) => {
   try {
     // Get the request body with the user's ID and the updated data
@@ -77,24 +82,18 @@ export const PATCH = async (request: NextRequest) => {
 
     // Proceed to find the user and update the data
     const updatedUser = await Recruiter.findOneAndUpdate(
-      {
-        _id: new ObjectId(userId), // Ensure the userId is valid as a MongoDB ObjectId
-      },
+      { _id: new ObjectId(userId) }, // Ensure the userId is valid as a MongoDB ObjectId
       { username: newUserName, password: newUserPassword, email: newUserEmail },
-      { new: true } // 'new: true' ensures we get the updated user object
+      { new: true }
     );
 
-    // Check if the user was found and updated
     if (!updatedUser) {
       return new NextResponse(
         JSON.stringify({ message: "Recruiter not found in database" }),
-        {
-          status: 400,
-        }
+        { status: 400 }
       );
     }
 
-    // Return a success response with the updated user data
     return new NextResponse(
       JSON.stringify({ message: "user is updated", user: updatedUser }),
       { status: 200 }
@@ -109,11 +108,9 @@ export const PATCH = async (request: NextRequest) => {
 // DELETE request to delete a user
 export const DELETE = async (request: NextRequest) => {
   try {
-    // Extract the userId from the query parameters of the request URL
     const { searchParams } = new URL(request.url);
     const userId = searchParams.get("userId");
 
-    // Validate if userId exists in the request URL
     if (!userId) {
       return new NextResponse(
         JSON.stringify({ message: "Cannot find user Id" }),
@@ -121,22 +118,18 @@ export const DELETE = async (request: NextRequest) => {
       );
     }
 
-    // Validate if the provided userId is a valid MongoDB ObjectId
     if (!Types.ObjectId.isValid(userId)) {
       return new NextResponse(JSON.stringify({ message: "Invalid user Id" }), {
         status: 400,
       });
     }
 
-    // Connect to the database
     await connect();
 
-    // Attempt to find and delete the user by their ObjectId
     const deletedUsers = await Recruiter.findByIdAndDelete(
       new Types.ObjectId(userId)
     );
 
-    // If no user is found or deleted, return an error
     if (!deletedUsers) {
       return new NextResponse(
         JSON.stringify({
@@ -146,12 +139,9 @@ export const DELETE = async (request: NextRequest) => {
       );
     }
 
-    // Return a success response with the deleted user data
     return new NextResponse(
       JSON.stringify({ message: "user is deleted", user: deletedUsers }),
-      {
-        status: 200,
-      }
+      { status: 200 }
     );
   } catch (error: any) {
     console.log("Error in deleting recruiters " + error.message, {

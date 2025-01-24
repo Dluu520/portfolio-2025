@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "@/app/ui/footer.module.css";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -13,7 +14,7 @@ function Footer() {
         </a>
         <a
           className="hover:cursor-pointer text-[#1a202c]"
-          href="https://www.linkedin.com/in/dong-luu-520/"
+          href="https://www.linkedin.com/in/dong-luu-fl/"
         >
           LinkedIn
         </a>
@@ -21,10 +22,10 @@ function Footer() {
           Portfolio
         </a> */}
       </div>
-      <a
+      <Link
         href="/#home"
         className={`${styles.arrowUp}  text-lg font-bold mb-10 hover:cursor-pointer text-[#1a202c]`}
-      ></a>
+      ></Link>
     </div>
   );
 }

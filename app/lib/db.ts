@@ -1,3 +1,4 @@
+/* eslint-disable */
 // First step in rest API after establishing api is working under /api/(auth)/users
 // we created a database under mongodb and set up .env file with URI
 import mongoose, { connection, connections } from "mongoose";

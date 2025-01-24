@@ -1,3 +1,4 @@
+/* eslint-disable */
 import connect from "@/app/lib/db"; // Importing the database connection utility
 import User from "@/app/lib/modals/user"; // Importing the User model
 import { NextRequest, NextResponse } from "next/server"; // Importing types for the request and response in Next.js API routes

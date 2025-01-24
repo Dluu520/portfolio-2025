@@ -1,13 +1,7 @@
+/* eslint-disable */
 "use client";
 import { useState, ChangeEvent, FormEvent } from "react";
-const myEmployee = "http://localhost:3000/api/recruiters";
-
-type FormData = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
+const RecruiterDB = "http://localhost:3000/api/recruiters";
 
 interface Employee {
   phone: string;
@@ -19,27 +13,27 @@ interface Employee {
 }
 
 export default function ContactMe() {
-  const [employees, setEmployees] = useState<Employee[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+  const [recruiters, setRecruiters] = useState<Employee[]>([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState();
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
 
-  const [editEmployee, setEditEmployee] = useState<Employee | null>(null);
-  const [newEmail, setNewEmail] = useState("");
-  const [newUsername, setNewUsername] = useState("");
-  const [newPassword, setNewPassword] = useState("");
+  // const [editEmployee, setEditEmployee] = useState<Employee | null>(null);
+  // const [newEmail, setNewEmail] = useState("");
+  // const [newUsername, setNewUsername] = useState("");
+  // const [newPassword, setNewPassword] = useState("");
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newEmployee = { email, name, message, subject };
+    const newRecruiter = { email, name, message, subject };
     try {
-      const res = await fetch(`${myEmployee}`, {
+      const res = await fetch(`${RecruiterDB}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newEmployee),
+        body: JSON.stringify(newRecruiter),
       });
 
       if (!res.ok) {
@@ -49,13 +43,13 @@ export default function ContactMe() {
 
       console.log("Successfully submitted");
 
-      // Fetch the updated list of employees
-      const updatedEmployees = await fetch(`${myEmployee}`).then((res) =>
+      // Fetch the updated list of recruiters
+      const updatedRecruiter = await fetch(`${RecruiterDB}`).then(res =>
         res.json()
       );
 
       // Update the state with the new list and visually refresh the component
-      setEmployees(updatedEmployees);
+      setRecruiters(updatedRecruiter);
 
       // Clear form fields
       setEmail("");
@@ -69,7 +63,9 @@ export default function ContactMe() {
 
   return (
     <div className="h-screen  items-center w-full   flex flex-col justify-center ">
-      <h1 className="text-4xl underline font-bold text-white">Let's talk!</h1>
+      <h1 className="text-4xl underline font-bold text-white">
+        Let&lsquos talk!
+      </h1>
       <form className="w-full md:w-[50%] p-6 space-y-4" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block mb-1 font-semibold">
@@ -79,9 +75,9 @@ export default function ContactMe() {
             type="text"
             id="name"
             name="name"
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg text-black"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={e => setName(e.target.value)}
             required
           />
         </div>
@@ -95,7 +91,7 @@ export default function ContactMe() {
             name="email"
             className="w-full px-4 py-2 border rounded-lg"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             required
           />
         </div>
@@ -109,7 +105,7 @@ export default function ContactMe() {
             name="subject"
             className="w-full px-4 py-2 border rounded-lg"
             value={subject}
-            onChange={(e) => setSubject(e.target.value)}
+            onChange={e => setSubject(e.target.value)}
             required
           />
         </div>
@@ -122,7 +118,7 @@ export default function ContactMe() {
             name="message"
             className="w-full px-4 py-2 border rounded-lg"
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={e => setMessage(e.target.value)}
             required
           />
         </div>

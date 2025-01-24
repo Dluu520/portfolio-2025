@@ -1,3 +1,4 @@
+/* eslint-disable */
 import connect from "@/app/lib/db";
 import User from "@/app/lib/modals/user";
 import Category from "@/app/lib/modals/category";

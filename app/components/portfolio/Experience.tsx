@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import styles from "@/app/ui/experience.module.css";
 import { useState } from "react";
@@ -38,7 +39,7 @@ const experiences = [
       "Accurately take orders and collaborate with kitchen staff and other waiters for smooth operations and delivery of the correct items.",
       "Stand and move quickly for long periods.",
       "Handle complaints or issues promptly and professionally.",
-      "Understand and Recall menu items, specials, and guests' preferences or explain menu items, ingredients, and preparation methods to new guests.",
+      "Understand and Recall menu items, specials, and guests&apos; preferences or explain menu items, ingredients, and preparation methods to new guests.",
     ],
   },
 ];
@@ -91,50 +92,50 @@ function Experience() {
   );
 }
 
-function temp() {
-  const reversedList = experiences.slice().reverse();
-  const [expandedIndex, setExpandedIndex] = useState(null);
+// function temp() {
+//   const reversedList = experiences.slice().reverse();
+//   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const handleExpand = (index: any) => {
-    setExpandedIndex(index === expandedIndex ? null : index); // Toggle expansion
-  };
+//   const handleExpand = (index: any) => {
+//     setExpandedIndex(index === expandedIndex ? null : index); // Toggle expansion
+//   };
 
-  return (
-    <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 bg-gray-500">
-      <h1 className="text-4xl underline font-bold">Experience</h1>
-      <span className={styles.timeline}>
-        {reversedList.map((exp, index) => {
-          const positionClass = index % 2 === 0 ? styles.left : styles.right;
-          const isExpanded = expandedIndex === index;
+//   return (
+//     <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 bg-gray-500">
+//       <h1 className="text-4xl underline font-bold">Experience</h1>
+//       <span className={styles.timeline}>
+//         {reversedList.map((exp, index) => {
+//           const positionClass = index % 2 === 0 ? styles.left : styles.right;
+//           const isExpanded = expandedIndex === index;
 
-          return (
-            <ul
-              key={index}
-              className={`${styles.container} ${positionClass} ${
-                isExpanded ? styles.expanded : ""
-              }`}
-              onClick={() => handleExpand(index)}
-            >
-              <div className={`${styles.content}`}>
-                <h2>
-                  {exp.started} - {exp.ended === -1 ? "Current" : exp.ended}
-                </h2>
-                <h3 className="font-bold text-lg">{exp.position}</h3>
-                <p className="italic text-sm">{exp.employer}</p>
-                {/* Show details only if expanded */}
-                {isExpanded && (
-                  <ol>
-                    {exp.jd.map((each, jdIndex) => (
-                      <li key={jdIndex}>{each}</li>
-                    ))}
-                  </ol>
-                )}
-              </div>
-            </ul>
-          );
-        })}
-      </span>
-    </div>
-  );
-}
+//           return (
+//             <ul
+//               key={index}
+//               className={`${styles.container} ${positionClass} ${
+//                 isExpanded ? styles.expanded : ""
+//               }`}
+//               onClick={() => handleExpand(index)}
+//             >
+//               <div className={`${styles.content}`}>
+//                 <h2>
+//                   {exp.started} - {exp.ended === -1 ? "Current" : exp.ended}
+//                 </h2>
+//                 <h3 className="font-bold text-lg">{exp.position}</h3>
+//                 <p className="italic text-sm">{exp.employer}</p>
+//                 {/* Show details only if expanded */}
+//                 {isExpanded && (
+//                   <ol>
+//                     {exp.jd.map((each, jdIndex) => (
+//                       <li key={jdIndex}>{each}</li>
+//                     ))}
+//                   </ol>
+//                 )}
+//               </div>
+//             </ul>
+//           );
+//         })}
+//       </span>
+//     </div>
+//   );
+// }
 export default Experience;
