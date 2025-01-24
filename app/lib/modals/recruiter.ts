@@ -3,7 +3,7 @@ const RecruiterSchema = new Schema(
   {
     name: { type: "string", required: true },
     // phone: { type: "string", required: true },
-    email: { type: "string", required: true, unique: true },
+    email: { type: "string", required: true },
     // company: { type: "string", required: true },
     // position: { type: "string", required: true },
     message: { type: "string", required: true },
