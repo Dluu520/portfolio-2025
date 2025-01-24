@@ -16,7 +16,7 @@ export const GET = async () => {
     const users = await User.find();
     // Return the list of users in the response
     return new NextResponse(JSON.stringify(users), { status: 200 });
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in fetching users " + error.message, { status: 500 });
   }
   // Default response in case of any error
@@ -40,7 +40,7 @@ export const POST = async (request: NextRequest) => {
       JSON.stringify({ message: "User is created: ", user: newUser }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in creating users " + error.message, { status: 500 });
   }
 };
@@ -93,7 +93,7 @@ export const PATCH = async (request: NextRequest) => {
       JSON.stringify({ message: "user is updated", user: updatedUser }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in updating users" + error.message, { status: 500 });
   }
 };
@@ -145,7 +145,7 @@ export const DELETE = async (request: NextRequest) => {
         status: 200,
       }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in deleting users " + error.message, { status: 500 });
   }
 };

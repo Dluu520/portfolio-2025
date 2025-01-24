@@ -16,7 +16,7 @@ export const GET = async () => {
     const recruiters = await Recruiter.find();
     // Return the list of recruiters in the response
     return new NextResponse(JSON.stringify(recruiters), { status: 200 });
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in fetching recruiters " + error.message, {
       status: 500,
     });
@@ -43,7 +43,7 @@ export const POST = async (request: NextRequest) => {
       }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in creating recruiters " + error.message, {
       status: 500,
     });
@@ -98,7 +98,7 @@ export const PATCH = async (request: NextRequest) => {
       JSON.stringify({ message: "user is updated", user: updatedUser }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in updating recruiters" + error.message, {
       status: 500,
     });
@@ -143,7 +143,7 @@ export const DELETE = async (request: NextRequest) => {
       JSON.stringify({ message: "user is deleted", user: deletedUsers }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.log("Error in deleting recruiters " + error.message, {
       status: 500,
     });
