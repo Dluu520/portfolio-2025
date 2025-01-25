@@ -1,4 +1,5 @@
 /* eslint-disable */
+"use client";
 import React from "react";
 import styles from "@/app/ui/experience.module.css";
 import { useState } from "react";

@@ -9,7 +9,7 @@ const projects = [
     description:
       "Showcasing my frontend development skills through the creation of a custom-designed landing page, highlighting my ability to build visually appealing and user-friendly interfaces.",
     demo: "https://fashionista-dong-luu.vercel.app/",
-    status: 1,
+    state: 1,
   },
   {
     name: "East Star",
@@ -17,7 +17,7 @@ const projects = [
     description:
       "Demonstrating frontend development skills through a design inspired by the user interface and aesthetics found in Shopify.",
     demo: "https://p-trainer.vercel.app/",
-    status: 1,
+    state: 1,
   },
   {
     name: "Agilify",
@@ -25,7 +25,7 @@ const projects = [
     description:
       "My version of a full-stack application designed to enhance the efficiency of project planning and streamline the production phases.",
     demo: "/#projects",
-    status: 0,
+    state: 0,
   },
 ];
 
@@ -52,15 +52,13 @@ function Projects() {
             <div className="w-full sm:col-span-2 flex flex-col p-6 justify-between">
               <span
                 className={`${
-                  prj.status ? `text-green-600` : `text-red-600`
+                  prj.state ? `text-green-600` : `text-red-600`
                 }text-center`}
               >
                 <p
-                  className={`${
-                    prj.status ? `text-green-600` : `text-red-600`
-                  }`}
+                  className={`${prj.state ? `text-green-600` : `text-red-600`}`}
                 >
-                  {prj.status ? "Live: " : "In-Progess: "}
+                  {prj.state ? "Live: " : "In-Progess: "}
                 </p>
                 {prj.description}
               </span>

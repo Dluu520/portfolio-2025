@@ -129,7 +129,7 @@ export default function ContactMe() {
         >
           Send Message
         </button>
-        {status && <p className="mt-4 text-center">{status}</p>}
+        {/* {status && <p className="mt-4 text-center">{status}</p>} */}
       </form>
     </div>
   );

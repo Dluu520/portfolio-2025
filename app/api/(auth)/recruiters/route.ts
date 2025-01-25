@@ -17,9 +17,15 @@ export const GET = async () => {
     // Return the list of recruiters in the response
     return new NextResponse(JSON.stringify(recruiters), { status: 200 });
   } catch (error) {
-    console.log("Error in fetching recruiters " + error.message, {
-      status: 500,
-    });
+    // console.log("Error in fetching recruiters " + error.message, {
+    //   status: 500,
+    // });
+    return new NextResponse(
+      JSON.stringify({
+        message: "Error in fetching recruiters  " + error.message,
+      })
+      { status: 500 }
+    );
   }
   return new NextResponse("This is default response in case of any error.");
 };
@@ -40,17 +46,17 @@ export const POST = async (request: NextRequest) => {
       JSON.stringify({
         message: "Recruiter is created: ",
         recruiter: newRecruiters,
-      }),
+      })
       { status: 200 }
     );
   } catch (error) {
-    console.log("Error in creating recruiters " + error.message, {
-      status: 500,
-    });
+    // console.log("Error in creating recruiters " + error.message, {
+    //   status: 500,
+    // });
     return new NextResponse(
       JSON.stringify({
         message: "Error in creating recruiters: " + error.message,
-      }),
+      })
       { status: 500 }
     );
   }
@@ -68,7 +74,7 @@ export const PATCH = async (request: NextRequest) => {
     // Validate if userId or newUserName is not provided
     if (!userId || !newUserName) {
       return new NextResponse(
-        JSON.stringify({ message: "ID or new username not found" }),
+        JSON.stringify({ message: "ID or new username not found" })
         { status: 400 }
       );
     }
@@ -89,19 +95,25 @@ export const PATCH = async (request: NextRequest) => {
 
     if (!updatedUser) {
       return new NextResponse(
-        JSON.stringify({ message: "Recruiter not found in database" }),
+        JSON.stringify({ message: "Recruiter not found in database" })
         { status: 400 }
       );
     }
 
     return new NextResponse(
-      JSON.stringify({ message: "user is updated", user: updatedUser }),
-      { status: 200 }
+      JSON.stringify({ message: "user is updated", user: updatedUser })
+      // { status: 200 }
     );
   } catch (error) {
-    console.log("Error in updating recruiters" + error.message, {
-      status: 500,
-    });
+    // console.log("Error in updating recruiters" + error.message, {
+    //   status: 500,
+    // });
+    return new NextResponse(
+      JSON.stringify({
+        message: "Error in updating recruiters " + error.message,
+      })
+      { status: 500 }
+    );
   }
 };
 
@@ -113,7 +125,7 @@ export const DELETE = async (request: NextRequest) => {
 
     if (!userId) {
       return new NextResponse(
-        JSON.stringify({ message: "Cannot find user Id" }),
+        JSON.stringify({ message: "Cannot find user Id" })
         { status: 400 }
       );
     }
@@ -134,18 +146,24 @@ export const DELETE = async (request: NextRequest) => {
       return new NextResponse(
         JSON.stringify({
           message: "Error while deleting user. Recruiter not found.",
-        }),
+        })
         { status: 400 }
       );
     }
 
     return new NextResponse(
-      JSON.stringify({ message: "user is deleted", user: deletedUsers }),
+      JSON.stringify({ message: "user is deleted", user: deletedUsers })
       { status: 200 }
     );
   } catch (error) {
-    console.log("Error in deleting recruiters " + error.message, {
-      status: 500,
-    });
+    // console.log("Error in deleting recruiters " + error.message, {
+    //   status: 500,
+    // });
+    return new NextResponse(
+      JSON.stringify({
+        message: "Error in deleting recruiters " + error.message,
+      })
+      { status: 500 }
+    );
   }
 };
