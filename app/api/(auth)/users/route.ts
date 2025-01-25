@@ -15,16 +15,13 @@ export const GET = async () => {
     // Fetch all users from the database
     const users = await User.find();
     // Return the list of users in the response
-    return new NextResponse(
-      JSON.stringify(users)
-      { status: 200 }
-    );
+    return new NextResponse(JSON.stringify(users), { status: 200 });
   } catch (error) {
     // console.log("Error in fetching users " + error.message, { status: 500 });
     return new NextResponse(
       JSON.stringify({
         message: "Error in fetching users " + error.message,
-      })
+      }),
       { status: 500 }
     );
   }
@@ -46,7 +43,7 @@ export const POST = async (request: NextRequest) => {
     await newUser.save();
     // Return a success response with the new user data
     return new NextResponse(
-      JSON.stringify({ message: "User is created: ", user: newUser })
+      JSON.stringify({ message: "User is created: ", user: newUser }),
       { status: 200 }
     );
   } catch (error) {
@@ -54,7 +51,7 @@ export const POST = async (request: NextRequest) => {
     return new NextResponse(
       JSON.stringify({
         message: "Error in creating users " + error.message,
-      })
+      }),
       { status: 500 }
     );
   }
@@ -72,7 +69,7 @@ export const PATCH = async (request: NextRequest) => {
     // Validate if userId or newUserName is not provided
     if (!userId || !newUserName) {
       return new NextResponse(
-        JSON.stringify({ message: "ID or new username not found" })
+        JSON.stringify({ message: "ID or new username not found" }),
         { status: 400 }
       );
     }
@@ -105,7 +102,7 @@ export const PATCH = async (request: NextRequest) => {
 
     // Return a success response with the updated user data
     return new NextResponse(
-      JSON.stringify({ message: "user is updated", user: updatedUser })
+      JSON.stringify({ message: "user is updated", user: updatedUser }),
       { status: 200 }
     );
   } catch (error) {
@@ -113,7 +110,7 @@ export const PATCH = async (request: NextRequest) => {
     return new NextResponse(
       JSON.stringify({
         message: "Error in updating users " + error.message,
-      })
+      }),
       { status: 500 }
     );
   }
@@ -129,7 +126,7 @@ export const DELETE = async (request: NextRequest) => {
     // Validate if userId exists in the request URL
     if (!userId) {
       return new NextResponse(
-        JSON.stringify({ message: "Cannot find user Id" })
+        JSON.stringify({ message: "Cannot find user Id" }),
         { status: 400 }
       );
     }
@@ -154,7 +151,7 @@ export const DELETE = async (request: NextRequest) => {
       return new NextResponse(
         JSON.stringify({
           message: "Error while deleting user. User not found.",
-        })
+        }),
         { status: 400 }
       );
     }
@@ -171,7 +168,7 @@ export const DELETE = async (request: NextRequest) => {
     return new NextResponse(
       JSON.stringify({
         message: "Error in deleting users " + error.message,
-      })
+      }),
       { status: 500 }
     );
   }
