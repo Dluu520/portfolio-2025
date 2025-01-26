@@ -2,7 +2,7 @@
 "use client";
 import { useState } from "react";
 const devPhase = false;
-const DevRecruiterDB = "http://localhost:3000/api/recruiters";
+const DevRecruiterDB = "https://portfolio-dluu-dev.vercel.app/api/recruiters";
 const ProdRecruiterDB = "https://portfolio-dluu-dev.vercel.app/api/recruiters";
 interface Employee {
   phone: string;
