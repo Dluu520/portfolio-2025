@@ -3,8 +3,12 @@
 // we created a database under mongodb and set up .env file with URI
 import mongoose, { connection, connections } from "mongoose";
 //install mongoose package
-const URI = process.env.MONGO_URI;
 // grab the URI from .env that has the connection to our database
+const URI = process.env.MONGO_URI;
+
+if (!process.env.MONGODB_URI) {
+  throw new Error("Please add your Mongo URI to .env.local");
+}
 
 // establish connection
 const connect = async () => {

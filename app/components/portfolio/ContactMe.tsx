@@ -1,8 +1,9 @@
 /* eslint-disable */
 "use client";
-import { useState, ChangeEvent, FormEvent } from "react";
-const RecruiterDB = "http://localhost:3000/api/recruiters";
-
+import { useState } from "react";
+const deployed = true;
+const DevRecruiterDB = "http://localhost:3000/api/recruiters";
+const ProdRecruiterDB = "https://portfolio-dluu-dev.vercel.app/api/recruiters";
 interface Employee {
   phone: string;
   email: string;
@@ -30,32 +31,59 @@ export default function ContactMe() {
     event.preventDefault();
     const newRecruiter = { email, name, message, subject };
     try {
-      const res = await fetch(`${RecruiterDB}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newRecruiter),
-      });
+      if (!deployed) {
+        const res = await fetch(`${DevRecruiterDB}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newRecruiter),
+        });
+        if (!res.ok) {
+          console.error("Error submitting data");
+          return;
+        }
 
-      if (!res.ok) {
-        console.error("Error submitting data");
-        return;
+        console.log("Successfully submitted");
+
+        // Fetch the updated list of recruiters
+        const updatedRecruiter = await fetch(`${DevRecruiterDB}`).then(res =>
+          res.json()
+        );
+
+        // Update the state with the new list and visually refresh the component
+        setRecruiters(updatedRecruiter);
+
+        // Clear form fields
+        setEmail("");
+        setName("");
+        setSubject("");
+        setMessage("");
+      } else {
+        const res = await fetch(`${ProdRecruiterDB}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newRecruiter),
+        });
+        if (!res.ok) {
+          console.error("Error submitting data");
+          return;
+        }
+
+        console.log("Successfully submitted");
+
+        // Fetch the updated list of recruiters
+        const updatedRecruiter = await fetch(`${DevRecruiterDB}`).then(res =>
+          res.json()
+        );
+
+        // Update the state with the new list and visually refresh the component
+        setRecruiters(updatedRecruiter);
+
+        // Clear form fields
+        setEmail("");
+        setName("");
+        setSubject("");
+        setMessage("");
       }
-
-      console.log("Successfully submitted");
-
-      // Fetch the updated list of recruiters
-      const updatedRecruiter = await fetch(`${RecruiterDB}`).then(res =>
-        res.json()
-      );
-
-      // Update the state with the new list and visually refresh the component
-      setRecruiters(updatedRecruiter);
-
-      // Clear form fields
-      setEmail("");
-      setName("");
-      setSubject("");
-      setMessage("");
     } catch (err) {
       console.error("Catch error: ", err);
     }
@@ -64,7 +92,7 @@ export default function ContactMe() {
   return (
     <div className="h-screen  items-center w-full   flex flex-col justify-center ">
       <h1 className="text-4xl underline font-bold text-white">
-        Let&lsquos talk!
+        Let&apos; talk!
       </h1>
       <form className="w-full md:w-[50%] p-6 space-y-4" onSubmit={handleSubmit}>
         <div>
@@ -89,7 +117,7 @@ export default function ContactMe() {
             type="email"
             id="email"
             name="email"
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg text-black"
             value={email}
             onChange={e => setEmail(e.target.value)}
             required
@@ -103,20 +131,20 @@ export default function ContactMe() {
             type="text"
             id="subject"
             name="subject"
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg text-black"
             value={subject}
             onChange={e => setSubject(e.target.value)}
             required
           />
         </div>
         <div>
-          <label htmlFor="message" className="block mb-1 font-semibold">
+          <label htmlFor="message" className="block mb-1 font-semibold ">
             Message
           </label>
           <textarea
             id="message"
             name="message"
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg text-black"
             value={message}
             onChange={e => setMessage(e.target.value)}
             required
