@@ -54,6 +54,7 @@ function Experience() {
   };
   return (
     <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 mt-32 bg-[linear-gradient(35deg,_#f5f5f5_50%,_#1a202c_50%)]">
+      <div className=" border-[1px] border-dotted  w-[80%] "></div>
       <h1 className="text-4xl underline font-bold text-white">Experience</h1>
       <span className={`${styles.timeline} `}>
         {reversedList.map((exp, index) => {

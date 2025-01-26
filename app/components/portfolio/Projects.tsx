@@ -33,8 +33,9 @@ function Projects() {
   return (
     <div
       id="projects"
-      className="flex flex-wrap justify-center items-center p-10 md:p-52 gap-10 bg-[linear-gradient(35deg,_#1a202c_50%,_#f5f5f5_50%)]"
+      className="flex-1 flex flex-col justify-center items-center p-10  gap-10 bg-[linear-gradient(35deg,_#1a202c_50%,_#f5f5f5_50%)]"
     >
+      <div className=" border-[1px] border-dotted border-black w-[80%] "></div>
       <h1 className="text-4xl underline font-bold text-[#1a202c]">Projects</h1>
       {projects.map((prj, index) => {
         return (

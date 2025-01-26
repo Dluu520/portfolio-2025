@@ -7,7 +7,7 @@ import mongoose, { connection, connections } from "mongoose";
 const URI = process.env.MONGO_URI;
 
 if (!process.env.MONGODB_URI) {
-  throw new Error("Please add your Mongo URI to .env.local");
+  console.error("Please add your Mongo URI to .env");
 }
 
 // establish connection
