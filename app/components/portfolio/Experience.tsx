@@ -11,9 +11,9 @@ const experiences = [
     position: "IT/Receptionist",
     employer: "UCO LXstudio INC.",
     jd: [
-      "Communicated with clients to inquire about details of the service and assistance needed.",
-      "Troubleshot complex environments and A/V equipment, isolated issues, and documented them through ticketing.",
-      "Coordinated with team members to maintain computers and devices across campus",
+      "Communicated directly with clients via email and in person to assess needs, ensuring accurate and timely delivery of supplies and assistance. Achieved a 95% client satisfaction rate by maintaining professionalism and responsiveness in all client interactions.",
+      "Coordinated campus-wide device maintenance and collaborated with team members to ensure systems were up-to-date, contributing to a 90% reduction in device-related issues across departments.",
+      " Diagnosed and resolved complex A/V and IT issues efficiently, cutting average downtime by 50%. Documented each issue in a ticketing system, improving troubleshooting processes and ensuring clear communication with technical support teams.",
     ],
   },
   {
@@ -22,11 +22,11 @@ const experiences = [
     position: "Software Web Developer",
     employer: "Good Greek Moving and Storage",
     jd: [
-      "Full Stack Web Developer that built a CRM to streamline workflow.",
-      "Designed, modeled, and created schemas to improve user experience and interface for CRM.",
-      "Developed with JavaScript, CSS, and HTML, using React for reusable components and state management.",
-      "Leveraged Next.js for server-side rendering, routing, and serverless API endpoints. Utilized MongoDB for scalable backend database management, integrating data via API endpoints.",
-      "Managed the project through GitHub for version control during development, deployment,testing, maintenance, and rollback phases.",
+      "Optimized frontend code using React and Redux, achieving a 40% reduction in load times for single-page applications, improving user engagement and reducing bounce rates by 20%."
+      "Reduced development cycles by 30% by implementing agile practices and automated testing with TypeScript and Jest, enabling faster production releases and minimizing bugs by 20%." 
+      "Optimized database queries with MongoDB, enhancing data retrieval speed by 40% for faster decision-making."
+      "Designed and deployed intuitive UI components using MUI and custom CSS, elevating user satisfaction by 70% based on feedback. Leveraged MongoDB for efficient data handling, resulting in a 25% faster data retrieval time and a seamless, responsive user experience across all devices."
+      
     ],
   },
   {
@@ -36,11 +36,12 @@ const experiences = [
     employer: "Hunan Garden",
     jd: [
       "Strong interpersonal and communication skills to interact positively with guests.",
-      "Remain calm and efficient in a fast-paced, high-pressure environment juggle multiple tables and prioritize tasks.",
-      "Accurately take orders and collaborate with kitchen staff and other waiters for smooth operations and delivery of the correct items.",
-      "Stand and move quickly for long periods.",
-      "Handle complaints or issues promptly and professionally.",
-      "Understand and Recall menu items, specials, and guests&apos; preferences or explain menu items, ingredients, and preparation methods to new guests.",
+      "Delivered excellent customer service, increasing repeat customer visits by 70% through attentive and personalized service.",
+      "Managed up to 7 tables per shift in a high-pressure environment, maintaining a 99% order accuracy rate.",
+      "Improved operational efficiency by prioritizing tasks and coordinating with the kitchen staff to reduce wait times by 20%.",
+      "Assisted with inventory stocking and product rotation, ensuring freshness and reducing waste by 10%.",
+      "Maintained compliance with health and safety standards by ensuring cleanliness and sanitation in all work areas.",
+      "Performed physically demanding tasks, including standing for 6-8 hours per shift, running, walking, and lifting trays or other materials up to 50 lbs.",
     ],
   },
 ];

@@ -16,12 +16,11 @@ function AboutMe() {
         hope other developers like myself can utilize to help them.
         <br /> <br />
         From my career, I&apos;ve honed both my front-end and back-end skills.
-        Keeping up with the latest trends is a priority for me, ensuring I
-        deliver a clean and efficient UI for user experience. I specialize
-        mainly in Next.js and React, but have worked with Angular, and Vue as
-        well. I&apos;m most familiar with stacks such as MERN (Mongo, Express,
-        React, Node). For backend skills I have SQL/MySQL/NoSQL for data analyst
-        / entry experience.
+        Learning new ways to implement UI/UX, ensuring I deliver a clean and
+        efficient user experience. I specialize mainly in Next.js and React, but
+        have worked with Angular, and Vue as well. I&apos;m most familiar with
+        stacks such as MERN (Mongo, Express, React, Node). For backend skills I
+        have SQL and MySQL for data analatics.
       </span>
     </div>
   );
