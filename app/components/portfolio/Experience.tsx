@@ -22,11 +22,10 @@ const experiences = [
     position: "Software Web Developer",
     employer: "Good Greek Moving and Storage",
     jd: [
-      "Optimized frontend code using React and Redux, achieving a 40% reduction in load times for single-page applications, improving user engagement and reducing bounce rates by 20%."
-      "Reduced development cycles by 30% by implementing agile practices and automated testing with TypeScript and Jest, enabling faster production releases and minimizing bugs by 20%." 
-      "Optimized database queries with MongoDB, enhancing data retrieval speed by 40% for faster decision-making."
-      "Designed and deployed intuitive UI components using MUI and custom CSS, elevating user satisfaction by 70% based on feedback. Leveraged MongoDB for efficient data handling, resulting in a 25% faster data retrieval time and a seamless, responsive user experience across all devices."
-      
+      "Optimized frontend code using React and Redux, achieving a 40% reduction in load times for single-page applications, improving user engagement and reducing bounce rates by 20%.",
+      "Reduced development cycles by 30% by implementing agile practices and automated testing with TypeScript and Jest, enabling faster production releases and minimizing bugs by 20%.",
+      "Optimized database queries with MongoDB, enhancing data retrieval speed by 40% for faster decision-making.",
+      "Designed and deployed intuitive UI components using MUI and custom CSS, elevating user satisfaction by 70% based on feedback. Leveraged MongoDB for efficient data handling, resulting in a 25% faster data retrieval time and a seamless, responsive user experience across all devices.",
     ],
   },
   {

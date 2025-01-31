@@ -97,7 +97,9 @@ export default function ContactMe() {
       {/* {status && <p className="mt-4 text-center">{status}</p>} */}
       <div className=" border-[1px] border-dotted w-[80%] "></div>
       {isLoading ? (
-        <div>Loading...</div>
+        <div className="h-screen  items-center text-center w-full flex flex-col justify-center ">
+          Loading...
+        </div>
       ) : (
         <div className="h-screen  items-center w-full   flex flex-col justify-center ">
           <h1 className="text-4xl underline font-bold text-white">
