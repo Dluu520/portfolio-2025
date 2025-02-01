@@ -103,7 +103,7 @@ export default function ContactMe() {
       ) : (
         <div className="h-screen  items-center w-full   flex flex-col justify-center ">
           <h1 className="text-4xl underline font-bold text-white">
-            Let&apos; talk!
+            Let&apos;s chat!
           </h1>
           <form
             className="w-full md:w-[50%] p-6 space-y-4"
