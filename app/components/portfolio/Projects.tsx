@@ -4,6 +4,14 @@ import React from "react";
 
 const projects = [
   {
+    name: "Employee Management System",
+    image: "/employeeAPI.png",
+    description:
+      "Employee Management System: A Next.js and React app with MongoDB backend. Features CRUD operations, search/filter by ID, name, position, or department. RESTful API integration for seamless data management.",
+    demo: "https://employees-restful-api-example.vercel.app/",
+    state: 1,
+  },
+  {
     name: "Fashionista",
     image: "/fashionista.png",
     description:
@@ -19,14 +27,7 @@ const projects = [
     demo: "https://p-trainer.vercel.app/",
     state: 1,
   },
-  {
-    name: "Employee Management System",
-    image: "/employeeAPI.png",
-    description:
-      "Employee Management System: A Next.js and React app with MongoDB backend. Features CRUD operations, search/filter by ID, name, position, or department. RESTful API integration for seamless data management. Responsive UI with Tailwind CSS.",
-    demo: "https://employees-restful-api-example.vercel.app/",
-    state: 1,
-  },
+
   {
     name: "Agilify",
     image: "/crm.png",
@@ -64,7 +65,7 @@ function Projects() {
               />
             </div>
 
-            <div className="flex flex-col p-6 flex-grow">
+            <div className="flex flex-col p-6 flex-grow justify-between">
               <span
                 className={`text-sm font-semibold ${
                   prj.state ? "text-green-400" : "text-yellow-400"
@@ -82,7 +83,7 @@ function Projects() {
                       ? "bg-blue-500 hover:bg-blue-600"
                       : "bg-gray-500 cursor-not-allowed"
                   } text-white transition-colors duration-300`}
-                  target={prj.state ? "_blank" : undefined}
+                  target={prj.state ? "Live" : undefined}
                   rel={prj.state ? "noopener noreferrer" : undefined}
                 >
                   {prj.state ? "View Demo" : "Coming Soon"}
