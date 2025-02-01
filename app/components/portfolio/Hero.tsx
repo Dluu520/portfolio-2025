@@ -17,7 +17,7 @@ function Hero() {
       <div className="absolute z-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex flex-col items-center w-full p-20 gap-4">
         <h1 className=" text-4xl md:text-8xl underline ">Dong Luu</h1>
         <h3 className="text-lg md:text-2xl ">Software Engineer</h3>
-        <a href="Dong_Luu_Resume.pdf" download="Dong_Luu_Resume.pdf">
+        <a href="Dong_Luu_Dev_2025.pdf" download="Dong_Luu_Dev_2025.pdf">
           <button className="text-center text-sm border-2 p-2 rounded-lg  hover:cursor-pointer ">
             Download Resume
           </button>
