@@ -11,7 +11,7 @@ const skills = [
   { name: "jQuery" },
   { name: "HTML" },
   { name: "CSS" },
-  { name: "C++ " },
+  { name: "C++" },
   { name: "Tailwind" },
   { name: "Framer Motion" },
   { name: "Bootstrap" },
@@ -40,26 +40,27 @@ const skills = [
   { name: "PowerPoint" },
   { name: "FullStack" },
 ];
+
 function Skills() {
   return (
-    <div
+    <section
       id="skills"
-      className="snap-center flex flex-col justify-center items-center  gap-10 "
+      className="snap-center flex flex-col justify-center items-center p-8 gap-6  to-gray-800 "
     >
-      <h1 className="text-4xl underline font-bold">Skills</h1>
-      <div className="justify-center overflow-hidden flex flex-wrap gap-6 w-full md:w-[80%] lg:w-[50%] text-white">
-        {skills.map((skill, index) => {
-          return (
-            <ul
-              key={index}
-              className="bg-blue-900/50 text-center rounded-lg p-2 hover:bg-blue-400 hover:scale-105"
-            >
-              {skill.name}
-            </ul>
-          );
-        })}
+      <h1 className="text-4xl font-bold underline decoration-blue-500">
+        Skills
+      </h1>
+      <div className="flex flex-wrap justify-center gap-4 max-w-4xl">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 hover:scale-105 transition-all duration-300"
+          >
+            {skill.name}
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

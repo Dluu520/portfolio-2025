@@ -95,7 +95,7 @@ export default function ContactMe() {
   return (
     <div className="flex-1 flex flex-col gap-10 justify-center items-center">
       {/* {status && <p className="mt-4 text-center">{status}</p>} */}
-      <div className=" border-[1px] border-dotted w-[80%] "></div>
+      {/* <div className=" border-[1px] border-dotted w-[80%] "></div> */}
       {isLoading ? (
         <div className="h-screen  items-center text-center w-full flex flex-col justify-center ">
           Loading...

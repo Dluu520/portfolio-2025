@@ -2,27 +2,32 @@ import React from "react";
 
 function AboutMe() {
   return (
-    <div
+    <section
       id="about"
-      className="flex-1 flex flex-col  justify-center items-center p-10 gap-10 "
+      className="flex-1 flex flex-col  items-center p-8 gap-6 bg-gradient-to-b from-gray-900"
     >
-      <h1 className="text-4xl underline font-bold">About Me</h1>
-      <span className="flex-grow">
-        Hello, I go by Don, a Software Web Developer - Fullstack
+      <h1 className="text-4xl font-bold underline decoration-blue-500">
+        About Me
+      </h1>
+      <p className="text-lg text-center max-w-2xl leading-relaxed">
+        Hello, my name is Don, and I am a Full Stack Software Developer with a
+        passion for creating efficient and user-friendly web applications.{" "}
         <br /> <br />
-        Since attending University I&apos;ve been hired to craft a tailored CRM
-        (Customer Relationship Management System) to streamline workflow and
-        using that experience I am currently working on a one-man project that I
-        hope other developers like myself can utilize to help them.
+        During my academic journey, I had the opportunity to develop a
+        customized CRM (Customer Relationship Management System) designed to
+        streamline workflows and enhance productivity. Building on that
+        experience, I am currently working on an independent project aimed at
+        providing valuable tools and resources for fellow developers.
         <br /> <br />
-        From my career, I&apos;ve honed both my front-end and back-end skills.
-        Learning new ways to implement UI/UX, ensuring I deliver a clean and
-        efficient user experience. I specialize mainly in Next.js and React, but
-        have worked with Angular, and Vue as well. I&apos;m most familiar with
-        stacks such as MERN (Mongo, Express, React, Node). For backend skills I
-        have SQL and MySQL for data analatics.
-      </span>
-    </div>
+        Throughout my career, I have cultivated expertise in both front-end and
+        back-end development, consistently striving to deliver clean, intuitive,
+        and high-performing user interfaces. My primary focus lies in leveraging
+        modern technologies such as Next.js and React, though I also have
+        hands-on experience with Angular and Vue. I am proficient in the MERN
+        stack (MongoDB, Express, React, Node.js) and possess strong backend
+        skills, including SQL and MySQL, for data analytics and management.
+      </p>
+    </section>
   );
 }
 
