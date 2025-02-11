@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Certifications from "./Certification"; // Import the Certifications component
 import Image from "next/image";
 
@@ -22,7 +21,7 @@ function Footer() {
             layout="fill"
             objectFit="cover"
             className="transition-transform duration-300 group-hover:scale-105  bg-white"
-          />{" "}
+          />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <span className="text-sm text-white text-center font-semibold">
               Github
