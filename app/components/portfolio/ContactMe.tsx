@@ -46,7 +46,7 @@ export default function ContactMe() {
         console.log("Successfully submitted");
 
         // Fetch the updated list of recruiters
-        const updatedRecruiter = await fetch(`${DevRecruiterDB}`).then(res =>
+        const updatedRecruiter = await fetch(`${DevRecruiterDB}`).then((res) =>
           res.json()
         );
 
@@ -72,7 +72,7 @@ export default function ContactMe() {
         console.log("Successfully submitted");
 
         // Fetch the updated list of recruiters
-        const updatedRecruiter = await fetch(`${ProdRecruiterDB}`).then(res =>
+        const updatedRecruiter = await fetch(`${ProdRecruiterDB}`).then((res) =>
           res.json()
         );
 
@@ -93,7 +93,10 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="flex-1 flex flex-col gap-10 justify-center items-center">
+    <div
+      id="contact"
+      className="flex-1 flex flex-col gap-10 justify-center items-center "
+    >
       {/* {status && <p className="mt-4 text-center">{status}</p>} */}
       {/* <div className=" border-[1px] border-dotted w-[80%] "></div> */}
       {isLoading ? (
@@ -101,12 +104,12 @@ export default function ContactMe() {
           Loading...
         </div>
       ) : (
-        <div className="h-screen  items-center w-full   flex flex-col justify-center ">
-          <h1 className="text-4xl underline font-bold text-white">
+        <div className="h-screen  items-center w-full   flex flex-col justify-center">
+          <h1 className="flex text-4xl font-bold underline justify-center decoration-blue-500 mb-4">
             Let&apos;s chat!
           </h1>
           <form
-            className="w-full md:w-[50%] p-6 space-y-4"
+            className="w-full md:w-[30%] p-10 space-y-4 "
             onSubmit={handleSubmit}
           >
             <div>
@@ -119,7 +122,7 @@ export default function ContactMe() {
                 name="name"
                 className="w-full px-4 py-2 border rounded-lg text-black"
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
@@ -133,11 +136,11 @@ export default function ContactMe() {
                 name="email"
                 className="w-full px-4 py-2 border rounded-lg text-black"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
-            <div>
+            {/* <div>
               <label htmlFor="subject" className="block mb-1 font-semibold">
                 Subject
               </label>
@@ -147,10 +150,10 @@ export default function ContactMe() {
                 name="subject"
                 className="w-full px-4 py-2 border rounded-lg text-black"
                 value={subject}
-                onChange={e => setSubject(e.target.value)}
+                onChange={(e) => setSubject(e.target.value)}
                 required
               />
-            </div>
+            </div> */}
             <div>
               <label htmlFor="message" className="block mb-1 font-semibold ">
                 Message
@@ -158,15 +161,15 @@ export default function ContactMe() {
               <textarea
                 id="message"
                 name="message"
-                className="w-full px-4 py-2 border rounded-lg text-black"
+                className="w-full h-24 px-4 py-2 border rounded-lg text-black"
                 value={message}
-                onChange={e => setMessage(e.target.value)}
+                onChange={(e) => setMessage(e.target.value)}
                 required
               />
             </div>
             <button
               type="submit"
-              className={`w-full bg-blue-600 text-white py-2 rounded-lg `}
+              className={`w-full bg-blue-600 text-white py-2 rounded-lg ease-in hover:bg-blue-400  `}
               title="In Progress"
             >
               Send Message

@@ -53,10 +53,15 @@ function Experience() {
     setExpandedIndex(index === expandedIndex ? null : index); // Toggle expansion
   };
   return (
-    <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 mt-32 bg-[linear-gradient(35deg,_#f5f5f5_50%,_#1a202c_50%)]">
+    <div
+      className="flex-1 flex flex-col gap-10 justify-center items-center p-10 mt-32 
+    "
+    >
       <div className="border-t-2 border-dotted border-gray-500 w-[80%]"></div>
-      <h1 className="text-4xl underline font-bold text-white">Experience</h1>
-      <span className={`${styles.timeline} `}>
+      <h1 className="flex text-4xl font-bold underline justify-center decoration-blue-500 mb-4">
+        Experience
+      </h1>
+      <span className={`${styles.timeline}  lg:w-1/2`}>
         {reversedList.map((exp, index) => {
           const positionClass = index % 2 === 0 ? styles.left : styles.right;
           const isExpanded = expandedIndex === index; // Check if the current item is expanded
@@ -70,9 +75,10 @@ function Experience() {
               onClick={() => handleExpand(index)}
             >
               <div
-                className={`${styles.content} ${
-                  isExpanded ? "expanded" : ""
-                } text-[#2c3e50] `}
+                // className={`${styles.content} ${
+                //   isExpanded ? "expanded" : ""
+                // } text-[#2c3e50]  `}
+                className="border-2 border-gray-400 bg-white p-3"
               >
                 <h2 className="text-[#2c3e50]">
                   {exp.started} - {exp.ended === -1 ? "Current" : exp.ended}
@@ -80,11 +86,11 @@ function Experience() {
                 <h3 className="font-bold text-lg text-[#2c3e50]">
                   {exp.position}
                 </h3>
-                <ol>
+                {/* <ol>
                   {exp.jd.map((each, jdIndex) => (
                     <li key={jdIndex}>{each}</li>
                   ))}
-                </ol>
+                </ol> */}
               </div>
             </ul>
           );

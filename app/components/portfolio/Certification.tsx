@@ -4,35 +4,35 @@ import Image from "next/image";
 const certifications = [
   {
     name: "Flutter Mobile Development",
-    image: "/Flutter-Mobile-Applications-DevelopmentBadge.png",
+    image: "/certs/Flutter-Mobile-Applications-DevelopmentBadge.png",
     link: "https://www.credly.com/badges/51c9089c-cea8-4ca7-81b1-76b77c440a44/linked_in_profile",
   },
   {
     name: "Workforce Advantage",
-    image: "/Workforce-Advantage-Microcredential-Badge.png",
+    image: "/certs/Workforce-Advantage-Microcredential-Badge.png",
     link: "https://www.credly.com/badges/8a03dc94-9bfd-4b56-a539-585600a8c7b6?source=linked_in_profile",
   },
   {
     name: "Data Analytics Bootcamp Certification of Completion",
-    image: "/Verified Analytics Bootcamp Certification.png",
+    image: "/certs/Verified Analytics Bootcamp Certification.png",
     link: "https://github.com/AlexTheAnalyst/Data-Analytics-Bootcamp/blob/main/README.md",
   },
 ];
 
 function Certifications() {
   return (
-    <section className="w-full p-8 bg-gray-900">
-      <h2 className="text-2xl font-bold text-center mb-6 text-white">
-        Certifications
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+    <section className="w-full p-8">
+      <h1 className="flex text-2xl font-bold underline justify-center decoration-blue-500 mb-4">
+        Certifications and Socials
+      </h1>
+      <div className="flex flex-1 gap-6 justify-center">
         {certifications.map((cert, index) => (
           <a
             key={index}
             href={cert.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative w-full h-40 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="group relative w-16 h-16 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <Image
               src={cert.image}

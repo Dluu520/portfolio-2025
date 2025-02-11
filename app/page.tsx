@@ -11,13 +11,9 @@ export default function Home() {
   return (
     <div className="flex flex-col  ">
       <Hero />
-      <div className="flex flex-col sm:flex-row  ">
-        <AboutMe />
-        <Education />
-      </div>
-      <Skills />
-      <Experience />
+      <AboutMe />
       <Projects />
+      {/* <Experience /> */}
       <ContactMe />
       <Footer />
     </div>

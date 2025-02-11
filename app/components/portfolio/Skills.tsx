@@ -43,25 +43,56 @@ const skills = [
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="snap-center flex flex-col justify-center items-center p-8 gap-6  to-gray-800 "
-    >
-      <h1 className="text-4xl font-bold underline decoration-blue-500">
-        Skills
-      </h1>
-      <div className="flex flex-wrap justify-center gap-4 max-w-4xl">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 hover:scale-105 transition-all duration-300"
-          >
-            {skill.name}
-          </div>
-        ))}
-      </div>
-    </section>
+    <div>
+      <ShowPNG />
+    </div>
   );
 }
-
+function ShowSKILLS() {
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center ">
+      {skills.map((skill, index) => (
+        <div
+          key={index}
+          className="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-blue-500"
+        >
+          <p className="text-white text-sm md:text-base font-medium">
+            {skill.name}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+function ShowPNG() {
+  const skillsPNG = [
+    { name: "Next.js", img: "/skills/nextjs.png" },
+    { name: "React.js", img: "/skills/react.png" },
+    { name: "Express", img: "/skills/express.png" },
+    { name: "Vue", img: "/skills/vue.png" },
+    { name: "Git", img: "/skills/git.png" },
+    { name: "GitHub", img: "/skills/github.png" },
+    { name: "JavaScript", img: "/skills/javascript.png" },
+    { name: "HTML", img: "/skills/html.png" },
+    { name: "Material UI", img: "/skills/mui.png" },
+    { name: "Tailwind", img: "/skills/tailwind.png" },
+    { name: "CSS", img: "/skills/css.png" },
+    { name: "Sass", img: "/skills/sass.png" },
+  ];
+  return (
+    <div className="flex flex-wrap lg:mx-16 lg:my-20 justify-center gap-2 lg:gap-6 ">
+      {skillsPNG.map((skill, index) => (
+        <div
+          key={index}
+          className="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-blue-500 flex flex-col items-center"
+        >
+          <img src={skill.img} alt={skill.name} className="w-16 h-16 mb-2" />
+          <p className="text-white text-sm md:text-base font-medium">
+            {skill.name}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
 export default Skills;

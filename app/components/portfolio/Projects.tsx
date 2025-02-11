@@ -5,7 +5,7 @@ import React from "react";
 const projects = [
   {
     name: "Employee Management System",
-    image: "/employeeAPI.png",
+    image: "/projects/employeeAPI.png",
     description:
       "Employee Management System: A Next.js and React app with MongoDB backend. Features CRUD operations, search/filter by ID, name, position, or department. RESTful API integration for seamless data management.",
     demo: "https://employees-restful-api-example.vercel.app/",
@@ -13,7 +13,7 @@ const projects = [
   },
   {
     name: "Fashionista",
-    image: "/fashionista.png",
+    image: "/projects/fashionista.png",
     description:
       "Frontend Showcase: A Next.js and React app highlighting advanced CSS and Tailwind skills. Features dynamic UI, responsive design, and interactive components. Demonstrates modern frontend development techniques.",
     demo: "https://fashionista-dong-luu.vercel.app/",
@@ -21,7 +21,7 @@ const projects = [
   },
   {
     name: "East Star",
-    image: "/p-trainer.png",
+    image: "/projects/p-trainer.png",
     description:
       "Shopify-Inspired UI: A frontend-focused project using Next.js and React, showcasing advanced CSS and Tailwind skills. Features a clean, responsive design with interactive components, inspired by Shopify's aesthetics.",
     demo: "https://p-trainer.vercel.app/",
@@ -30,7 +30,7 @@ const projects = [
 
   {
     name: "Agilify",
-    image: "/crm.png",
+    image: "/projects/crm.png",
     description:
       "Project Planner Pro: A full-stack app built with Next.js, React, and MongoDB to streamline project planning and production. Features task management, team collaboration, and real-time updates for enhanced efficiency.",
     demo: "/#projects",
@@ -42,9 +42,8 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center p-8 gap-8 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
+      className="flex flex-col items-center justify-center p-8  gap-8 text-white"
     >
-      <div className="border-t-2 border-dotted border-gray-500 w-[80%]"></div>
       <h1 className="text-4xl font-bold underline decoration-blue-500">
         Projects
       </h1>
