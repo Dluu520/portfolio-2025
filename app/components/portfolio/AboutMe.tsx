@@ -5,7 +5,7 @@ import Image from "next/image";
 // const template =
 //   "Hello, my name is Don, and I am a Full Stack Software Developer with a passion for creating efficient and user-friendly web applications.During my academic journey, I had the opportunity to develop a customized CRM (Customer Relationship Management System) designed to streamline workflows and enhance productivity. Building on that experience, I am currently working on an independent project aimed at providing valuable tools and resources for fellow developers. Throughout my career, I have cultivated expertise in both front-end and back-end development, consistently striving to deliver clean, intuitive, and high-performing user interfaces. My primary focus lies in leveraging modern technologies such as Next.js and React, though I also have hands-on experience with Angular and Vue. I am proficient in the MERN stack (MongoDB, Express, React, Node.js) and possess strong backend skills, including SQL and MySQL, for data analytics and management.";
 const template2 =
-  "Passionate about creating quality application with clean UI/UX. I'm a full stack web developer based in Orlando, Florida, with a expertise in Next.js, React, and web development. When I'm not coding, I am usually playing my guitar, making music, reading, or going to the gym.";
+  "Passionate about creating quality application with clean UI/UX. I'm a full stack web developer based in Orlando, Florida, with expertise in Next.js, React, and web development. When I'm not coding, I am usually playing my guitar, making music, reading, or going to the gym.";
 
 function AboutMe() {
   return (

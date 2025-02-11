@@ -7,7 +7,7 @@ const projects = [
     name: "Employee Management System",
     image: "/projects/employeeAPI.png",
     description:
-      "Employee Management System: A Next.js and React app with MongoDB backend. Features CRUD operations, search/filter by ID, name, position, or department. RESTful API integration for seamless data management.",
+      "Employee Management System: A Next.js and React app with MongoDB backend, and utilizing public API for simulation. Features CRUD operations, search/filter by ID, name, position, or department. RESTful API integration for seamless data management.",
     demo: "https://employees-restful-api-example.vercel.app/",
     state: 1,
   },
@@ -15,7 +15,7 @@ const projects = [
     name: "Fashionista",
     image: "/projects/fashionista.png",
     description:
-      "Frontend Showcase: A Next.js and React app highlighting advanced CSS and Tailwind skills. Features dynamic UI, responsive design, and interactive components. Demonstrates modern frontend development techniques.",
+      "Frontend Showcase: A Next.js and React app highlighting CSS and Tailwind skills. Features dynamic UI, and responsive design. Demonstrates modern frontend development techniques.",
     demo: "https://fashionista-dong-luu.vercel.app/",
     state: 1,
   },
@@ -23,7 +23,7 @@ const projects = [
     name: "East Star",
     image: "/projects/p-trainer.png",
     description:
-      "Shopify-Inspired UI: A frontend-focused project using Next.js and React, showcasing advanced CSS and Tailwind skills. Features a clean, responsive design with interactive components, inspired by Shopify's aesthetics.",
+      "Shopify-Inspired Landing page: A frontend-focused project using Next.js and React, showcasing CSS and Tailwind skills. Features a clean, and responsive design of Shopify's template.",
     demo: "https://p-trainer.vercel.app/",
     state: 1,
   },
