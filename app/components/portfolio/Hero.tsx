@@ -8,11 +8,9 @@ function Hero() {
   const heroRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const node = heroRef.current;
+    const currentHero = heroRef.current;
 
-    if (!node) {
-      return;
-    }
+    if (!currentHero) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -21,10 +19,10 @@ function Hero() {
       { threshold: 0 },
     );
 
-    observer.observe(node);
+    observer.observe(currentHero);
 
     return () => {
-      observer.unobserve(node);
+      observer.unobserve(currentHero);
     };
   }, []);
 
