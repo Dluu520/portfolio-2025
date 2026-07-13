@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 const URI =
   process.env.MONGODB_URI ||
   process.env.MONGO_URI ||
-  "mongodb+srv://dluudev:dluudev520@mystorage.5q7he.mongodb.net/?appName=myStorage";
+  "mongodb+srv://dluudev:admin11@mystorage.5q7he.mongodb.net/?appName=myStorage";
 
 const connect = async () => {
   if (!URI) {
