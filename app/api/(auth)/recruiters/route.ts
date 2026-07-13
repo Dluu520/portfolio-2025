@@ -3,6 +3,9 @@ import Recruiter from "@/app/lib/modals/recruiter";
 import { NextRequest, NextResponse } from "next/server"; // Importing types for the request and response in Next.js API routes
 import { Types } from "mongoose"; // Importing Types from mongoose for handling MongoDB types
 
+const getErrorMessage = (error: unknown) =>
+  error instanceof Error ? error.message : "Unknown error";
+
 // Disable require() import rule for mongoose Types
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const ObjectId = require("mongoose").Types.ObjectId;
@@ -24,7 +27,7 @@ export const GET = async () => {
       JSON.stringify({
         message: "Error in fetching recruiters  " + error.message,
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
   return new NextResponse("This is default response in case of any error.");
@@ -33,31 +36,39 @@ export const GET = async () => {
 // POST request to create a new recruiter
 export const POST = async (request: NextRequest) => {
   try {
-    // Get the request body (user data)
     const body = await request.json();
-    console.log(body);
-    // Connect to the database
+
+    if (!body?.name || !body?.email || !body?.message) {
+      return new NextResponse(
+        JSON.stringify({ message: "Name, email, and message are required." }),
+        { status: 400 },
+      );
+    }
+
     await connect();
-    // Create a new Recruiter instance with the received data
-    const newRecruiters = new Recruiter(body);
-    // Save the new recruiter to the database
+
+    const newRecruiters = new Recruiter({
+      name: body.name,
+      email: body.email,
+      message: body.message,
+      subject: body.subject || "",
+    });
+
     await newRecruiters.save();
+
     return new NextResponse(
       JSON.stringify({
-        message: "Recruiter is created: ",
+        message: "Recruiter is created:",
         recruiter: newRecruiters,
       }),
-      { status: 200 }
+      { status: 200 },
     );
-  } catch (error) {
-    // console.log("Error in creating recruiters " + error.message, {
-    //   status: 500,
-    // });
+  } catch (error: unknown) {
     return new NextResponse(
       JSON.stringify({
-        message: "Error in creating recruiters: " + error.message,
+        message: "Error in creating recruiters: " + getErrorMessage(error),
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
 };
@@ -75,7 +86,7 @@ export const PATCH = async (request: NextRequest) => {
     if (!userId || !newUserName) {
       return new NextResponse(
         JSON.stringify({ message: "ID or new username not found" }),
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -90,18 +101,18 @@ export const PATCH = async (request: NextRequest) => {
     const updatedUser = await Recruiter.findOneAndUpdate(
       { _id: new ObjectId(userId) }, // Ensure the userId is valid as a MongoDB ObjectId
       { username: newUserName, password: newUserPassword, email: newUserEmail },
-      { new: true }
+      { new: true },
     );
 
     if (!updatedUser) {
       return new NextResponse(
         JSON.stringify({ message: "Recruiter not found in database" }),
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     return new NextResponse(
-      JSON.stringify({ message: "user is updated", user: updatedUser })
+      JSON.stringify({ message: "user is updated", user: updatedUser }),
       // { status: 200 }
     );
   } catch (error) {
@@ -112,7 +123,7 @@ export const PATCH = async (request: NextRequest) => {
       JSON.stringify({
         message: "Error in updating recruiters " + error.message,
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
 };
@@ -126,7 +137,7 @@ export const DELETE = async (request: NextRequest) => {
     if (!userId) {
       return new NextResponse(
         JSON.stringify({ message: "Cannot find user Id" }),
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -139,7 +150,7 @@ export const DELETE = async (request: NextRequest) => {
     await connect();
 
     const deletedUsers = await Recruiter.findByIdAndDelete(
-      new Types.ObjectId(userId)
+      new Types.ObjectId(userId),
     );
 
     if (!deletedUsers) {
@@ -147,13 +158,13 @@ export const DELETE = async (request: NextRequest) => {
         JSON.stringify({
           message: "Error while deleting user. Recruiter not found.",
         }),
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     return new NextResponse(
       JSON.stringify({ message: "user is deleted", user: deletedUsers }),
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     // console.log("Error in deleting recruiters " + error.message, {
@@ -163,7 +174,7 @@ export const DELETE = async (request: NextRequest) => {
       JSON.stringify({
         message: "Error in deleting recruiters " + error.message,
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
 };

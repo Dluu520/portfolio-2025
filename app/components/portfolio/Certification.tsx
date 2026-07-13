@@ -13,41 +13,66 @@ const certifications = [
     link: "https://www.credly.com/badges/8a03dc94-9bfd-4b56-a539-585600a8c7b6?source=linked_in_profile",
   },
   {
-    name: "Data Analytics Bootcamp Certification of Completion",
+    name: "Data Analytics Bootcamp",
     image: "/certs/Verified Analytics Bootcamp Certification.png",
     link: "https://github.com/AlexTheAnalyst/Data-Analytics-Bootcamp/blob/main/README.md",
+  },
+  {
+    name: "Foundations: Data, Data, Everywhere",
+    image: "/certs/coursera-cert.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/PJEZDDL74JUE",
+  },
+  {
+    name: "Prepare Data for Exploration",
+    image: "/certs/coursera-cert.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/77LL3MRHNBG5",
+  },
+  {
+    name: "Process Data from Dirty to Clean",
+    image: "/certs/coursera-cert.png",
+    link: "https://www.coursera.org/account/accomplishments/verify/BWX9RPBBHKOX",
   },
 ];
 
 function Certifications() {
   return (
-    <section className="w-full p-8">
-      <h1 className="flex text-2xl font-bold underline justify-center decoration-blue-500 mb-4">
-        Certifications and Socials
-      </h1>
-      <div className="flex flex-1 gap-6 justify-center">
-        {certifications.map((cert, index) => (
-          <a
-            key={index}
-            href={cert.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative w-16 h-16 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            <Image
-              src={cert.image}
-              alt={cert.name}
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="text-sm text-white text-center font-semibold">
-                {cert.name}
-              </span>
-            </div>
-          </a>
-        ))}
+    <section className="w-full px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-3xl border border-slate-700 bg-slate-900/70 p-6 shadow-lg backdrop-blur sm:p-8">
+        <div className="text-center sm:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+            Credentials
+          </p>
+          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+            Certifications & Professional Links
+          </h2>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {certifications.map((cert) => (
+            <a
+              key={cert.name}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 rounded-2xl border border-slate-700 bg-slate-800/80 p-3 transition hover:-translate-y-0.5 hover:border-blue-500/70 hover:bg-slate-800"
+            >
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-slate-600 bg-white">
+                <Image
+                  src={cert.image}
+                  alt={cert.name}
+                  fill
+                  sizes="56px"
+                  className="object-cover transition duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold text-white">{cert.name}</p>
+                <p className="mt-1 text-xs text-slate-400">View credential</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

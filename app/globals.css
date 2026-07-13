@@ -3,64 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #0f172a;
+  --foreground: #f8fafc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-/* Body */
 body {
-  background-color: #1a202c;
-  color: #d1d1d1; /* DARK NAVY */
-  font-family: "Arial", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #111827, #1f2937, #111827);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
 }
 
-/* Header */
+* {
+  box-sizing: border-box;
+}
+
 h1,
-h2 {
-  color: #d1d1d1; /* Dark Blue */
-}
-
-/* Subsection Titles */
+h2,
 h3 {
-  color: #d1d1d1; /* Navy */
+  color: #f8fafc;
 }
 
-/* Links or Call-to-Action */
 a {
-  color: #d1d1d1; /* Teal */
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* Section Dividers or Highlights */
-.hr {
-  border-top: 2px solid #7f8c8d; /* Light Gray Divider */
-}
-
-/* Button or Action Item */
-.button {
-  background-color: #16a085; /* Teal */
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-ol,
-ul {
-  list-style: initial; /* Restore default bullet styles */
-  padding-left: 20px; /* Adds space for bullets */
-  margin-left: 0; /* Adjust margin if needed */
-}
-
-li {
-  list-style-position: outside; /* Default position for bullets */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }

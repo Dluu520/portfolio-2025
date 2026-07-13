@@ -4,9 +4,9 @@
 import mongoose, { connection, connections } from "mongoose";
 //install mongoose package
 // grab the URI from .env that has the connection to our database
-const URI = process.env.MONGO_URI;
+const URI = process.env.MONGODB_URI || process.env.MONGO_URI;
 
-if (!process.env.MONGODB_URI) {
+if (!URI) {
   console.error("Please add your Mongo URI to .env");
 }
 
@@ -24,7 +24,7 @@ const connect = async () => {
   }
   //  if all the fail connection checks has passed then try connecting
   try {
-    mongoose.connect(URI!, {
+    await mongoose.connect(URI!, {
       dbName: "my-portfolio-storage",
       bufferCommands: true,
     });
