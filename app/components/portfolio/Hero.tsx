@@ -98,8 +98,8 @@ function Hero() {
               </div>
 
               <a
-                href="Dong Luu 2025 Resume Updated.pdf"
-                download="Dong Luu 2025 Resume Updated.pdf"
+                href="Dong Luu -  Fullstack Developer Resume 2026.pdf"
+                download="Dong Luu -  Fullstack Developer Resume 2026.pdf"
               >
                 <button className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900">
                   Download Resume

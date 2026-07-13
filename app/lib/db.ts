@@ -1,36 +1,34 @@
 /* eslint-disable */
 // First step in rest API after establishing api is working under /api/(auth)/users
 // we created a database under mongodb and set up .env file with URI
-import mongoose, { connection, connections } from "mongoose";
-//install mongoose package
-// grab the URI from .env that has the connection to our database
+import mongoose from "mongoose";
+
 const URI = process.env.MONGODB_URI || process.env.MONGO_URI;
 
-if (!URI) {
-  console.error("Please add your Mongo URI to .env");
-}
-
-// establish connection
 const connect = async () => {
+  if (!URI) {
+    console.warn("Mongo URI not configured. Skipping database connection.");
+    return;
+  }
+
   const connectionState = mongoose.connection.readyState;
 
   if (connectionState === 1) {
-    console.log("Already connected to database");
     return;
   }
+
   if (connectionState === 2) {
-    console.log("Connecting...");
     return;
   }
-  //  if all the fail connection checks has passed then try connecting
+
   try {
-    await mongoose.connect(URI!, {
+    await mongoose.connect(URI, {
       dbName: "my-portfolio-storage",
       bufferCommands: true,
     });
-    console.log("Database connected.");
-  } catch (err: any) {
-    console.log("Error found: ", err);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Unknown error";
+    console.warn("Database connection failed:", message);
   }
 };
 
