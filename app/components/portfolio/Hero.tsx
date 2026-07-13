@@ -5,9 +5,15 @@ import styles from "@/app/ui/hero.module.css";
 
 function Hero() {
   const [isSticky, setIsSticky] = useState(false);
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const node = heroRef.current;
+
+    if (!node) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsSticky(!entry.isIntersecting);
@@ -15,14 +21,10 @@ function Hero() {
       { threshold: 0 },
     );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
-      }
+      observer.unobserve(node);
     };
   }, []);
 
