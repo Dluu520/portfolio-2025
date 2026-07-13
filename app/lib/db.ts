@@ -3,7 +3,10 @@
 // we created a database under mongodb and set up .env file with URI
 import mongoose from "mongoose";
 
-const URI = process.env.MONGODB_URI || process.env.MONGO_URI;
+const URI =
+  process.env.MONGODB_URI ||
+  process.env.MONGO_URI ||
+  "mongodb+srv://dluudev:dluudev@mystorage.5q7he.mongodb.net/?appName=myStorage";
 
 const connect = async () => {
   if (!URI) {
