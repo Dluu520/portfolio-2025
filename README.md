@@ -1,36 +1,190 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portfolio 2025
 
-## Getting Started
+A modern, responsive developer portfolio built with **Next.js**, **React**, and **Tailwind CSS** to showcase my projects, technical skills, and professional experience.
 
-First, run the development server:
+🌐 **Live Demo:**  
+https://portfolio-dluu-dev.vercel.app
+
+---
+
+## 👋 About
+
+Hi, I'm **Dong Luu**, a Full Stack Developer with experience building web applications that solve real business problems. My background includes developing internal tools, customer management systems, and modern web applications using JavaScript technologies.
+
+I'm currently expanding my skill set into **SQL**, **Data Analytics**, and **Business Intelligence**, combining software development with data-driven problem solving.
+
+---
+
+## ✨ Features
+
+- Responsive design for desktop and mobile
+- Interactive project showcase
+- Technical skills section
+- Certifications
+- Smooth scrolling navigation
+- Modern UI built with Tailwind CSS
+- Optimized with Next.js App Router
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- JavaScript (ES6+)
+- Tailwind CSS
+- HTML5
+- CSS3
+
+### Backend
+
+- Node.js
+- Express.js
+- REST APIs
+
+### Database
+
+- MongoDB
+- Mongoose
+
+### Tools
+
+- Git
+- GitHub
+- VS Code
+- Vercel
+
+---
+
+## 📂 Featured Projects
+
+### 📋 Agilify
+A project management platform designed to improve team collaboration and task organization.
+
+**Highlights**
+
+- Authentication
+- CRUD functionality
+- Responsive UI
+- MongoDB integration
+- REST APIs
+
+---
+
+### 🏢 CRM System
+A customer relationship management system developed to streamline customer information and improve business workflows.
+
+**Highlights**
+
+- Customer management
+- Database integration
+- Dynamic user interface
+- Full-stack architecture
+
+---
+
+## 📈 Currently Learning
+
+I'm actively improving my skills in:
+
+- SQL
+- Data Analytics
+- Google BigQuery
+- Power BI
+- Data Visualization
+- Business Intelligence
+
+---
+
+## 📦 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Dluu520/portfolio-2025.git
+```
+
+Navigate into the project
+
+```bash
+cd portfolio-2025
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ⚙ Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+If using MongoDB functionality, create a `.env.local` file in the root directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+MONGODB_URI=your_mongodb_connection_string
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This portfolio is deployed with **Vercel**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To deploy your own version:
+
+```bash
+npm run build
+```
+
+or connect your GitHub repository directly to Vercel for automatic deployments.
+
+---
+
+## 📚 Future Improvements
+
+- [ ] Add Power BI dashboard projects
+- [ ] Add SQL case studies
+- [ ] Improve project case studies
+- [ ] Resume download
+- [ ] Dark/Light theme toggle
+- [ ] Blog section for technical articles
+
+---
+
+## 📫 Connect With Me
+
+**Portfolio**
+- https://portfolio-dluu-dev.vercel.app
+
+**GitHub**
+- https://github.com/Dluu520
+
+**LinkedIn**
+- *(Add your LinkedIn URL here)*
+
+---
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+---
+
+⭐ If you found this project helpful or inspiring, consider giving it a star!
