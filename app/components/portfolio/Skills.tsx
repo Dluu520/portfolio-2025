@@ -9,21 +9,26 @@ function Skills() {
   const developmentSkills = [
     { name: "Next.js", img: "/skills/nextjs.png" },
     { name: "React", img: "/skills/react.png" },
-    { name: "Express", img: "/skills/express.png" },
-    { name: "Tailwind", img: "/skills/tailwind.png" },
+    { name: "TypeScript", img: "/skills/typescript.png" },
     { name: "JavaScript", img: "/skills/javascript.png" },
+    { name: "Node.js", img: "/skills/nodejs.png" },
+    { name: "Express.js", img: "/skills/express.png" },
+    { name: "MongoDB", img: "/skills/mongodb.png" },
+    { name: "Mongoose", img: "/skills/mongoose.png" },
+    { name: "REST APIs", img: "/skills/restapi.png" },
+    { name: "Tailwind CSS", img: "/skills/tailwind.png" },
     { name: "Git", img: "/skills/git.png" },
-    { name: "HTML", img: "/skills/html.png" },
-    { name: "CSS", img: "/skills/css.png" },
+    { name: "HTML5", img: "/skills/html.png" },
+    { name: "CSS3", img: "/skills/css.png" },
   ];
 
   const analyticsSkills = [
     { name: "SQL", detail: "Queries & joins" },
-    { name: "Excel", detail: "Data cleanup" },
-    { name: "Sheets", detail: "Reporting" },
     { name: "BigQuery", detail: "Data prep" },
-    { name: "Dashboards", detail: "Insights" },
-    { name: "KPIs", detail: "Metrics" },
+    { name: "Excel", detail: "Data cleanup" },
+    { name: "Data Cleaning", detail: "Cleaning & shaping" },
+    { name: "Data Visualization", detail: "Dashboards & insights" },
+    { name: "Google Sheets", detail: "Reporting" },
   ];
 
   return (
