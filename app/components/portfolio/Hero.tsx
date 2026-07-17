@@ -56,7 +56,14 @@ function Hero() {
             </button>
           </a>
           <a href="mailto:dong.luu520@gmail.com">
-            <button className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20 sm:text-base">
+            <button
+              onClick={() => {
+                window.gtag("event", "resume_download", {
+                  event_category: "engagement",
+                });
+              }}
+              className="rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20 sm:text-base"
+            >
               Contact Me
             </button>
           </a>
