@@ -2,9 +2,10 @@ export {};
 
 declare global {
   interface Window {
+    dataLayer: Record<string, unknown>[];
     gtag: (
-      command: "config" | "event",
-      targetId: string,
+      command: "config" | "event" | "js",
+      targetId: string | Date,
       config?: Record<string, unknown>,
     ) => void;
   }

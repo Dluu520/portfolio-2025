@@ -29,9 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-sans`}
       >
+        {children}
         <GoogleAnalytics />
         <Analytics />
-        {children}
       </body>
     </html>
   );

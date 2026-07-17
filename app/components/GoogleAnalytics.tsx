@@ -5,7 +5,9 @@ import Script from "next/script";
 export default function GoogleAnalytics() {
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-  if (!GA_ID) return null;
+  if (!GA_ID) {
+    return null;
+  }
 
   return (
     <>
@@ -19,12 +21,16 @@ export default function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
 
           function gtag(){
-            dataLayer.push(arguments);
+            window.dataLayer.push(arguments);
           }
+
+          window.gtag = gtag;
 
           gtag('js', new Date());
 
-          gtag('config', '${GA_ID}');
+          gtag('config', '${GA_ID}', {
+            page_path: window.location.pathname,
+          });
         `}
       </Script>
     </>

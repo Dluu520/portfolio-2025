@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/app/lib/analytics/utils";
 
 type Project = {
   name: string;
@@ -274,6 +275,11 @@ function Modal({
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
           {project.state !== 0 && project.demo && (
             <a
+              onClick={() =>
+                trackEvent(`${project.name}`, {
+                  project: project.name,
+                })
+              }
               href={project.demo}
               className="rounded-xl bg-blue-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-blue-500"
               target="_blank"
@@ -284,6 +290,11 @@ function Modal({
           )}
           {project.github && project.github !== "n/a" && (
             <a
+              onClick={() =>
+                trackEvent(`${project.github}`, {
+                  project: project.name,
+                })
+              }
               href={project.github}
               className="rounded-xl border border-slate-600 px-4 py-2.5 text-center text-sm font-semibold text-slate-200 transition hover:bg-slate-800"
               target="_blank"

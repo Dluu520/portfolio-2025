@@ -51,14 +51,21 @@ function Hero() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <a href="#projects">
-            <button className="rounded-full border border-blue-400 bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 sm:text-base">
+            <button
+              onClick={() => {
+                window.gtag("event", "projects", {
+                  event_category: "engagement",
+                });
+              }}
+              className="rounded-full border border-blue-400 bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 sm:text-base"
+            >
               View Projects
             </button>
           </a>
           <a href="mailto:dong.luu520@gmail.com">
             <button
               onClick={() => {
-                window.gtag("event", "resume_download", {
+                window.gtag("event", "email", {
                   event_category: "engagement",
                 });
               }}
@@ -71,7 +78,14 @@ function Hero() {
             href="Dong Luu -  Fullstack Developer Resume 2026.pdf"
             download="Dong Luu -  Fullstack Developer Resume 2026.pdf"
           >
-            <button className="rounded-full border border-slate-300/40 bg-slate-900/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:text-base">
+            <button
+              onClick={() => {
+                window.gtag("event", "resume_download", {
+                  event_category: "engagement",
+                });
+              }}
+              className="rounded-full border border-slate-300/40 bg-slate-900/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:text-base"
+            >
               Download Resume
             </button>
           </a>
@@ -88,17 +102,38 @@ function Hero() {
             <div className="flex w-full flex-col items-center justify-between gap-3 px-2 py-1 sm:flex-row sm:px-6 lg:px-10">
               <div className="hidden gap-3 sm:flex">
                 <a href="#about">
-                  <button className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900">
+                  <button
+                    onClick={() => {
+                      window.gtag("event", "about", {
+                        event_category: "engagement",
+                      });
+                    }}
+                    className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900"
+                  >
                     About
                   </button>
                 </a>
                 <a href="#projects">
-                  <button className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900">
+                  <button
+                    onClick={() => {
+                      window.gtag("event", "projects", {
+                        event_category: "engagement",
+                      });
+                    }}
+                    className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900"
+                  >
                     Projects
                   </button>
                 </a>
                 <a href="mailto:dong.luu520@gmail.com">
-                  <button className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900">
+                  <button
+                    onClick={() => {
+                      window.gtag("event", "email", {
+                        event_category: "engagement",
+                      });
+                    }}
+                    className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900"
+                  >
                     Contact
                   </button>
                 </a>
@@ -108,7 +143,14 @@ function Hero() {
                 href="Dong Luu -  Fullstack Developer Resume 2026.pdf"
                 download="Dong Luu -  Fullstack Developer Resume 2026.pdf"
               >
-                <button className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900">
+                <button
+                  onClick={() => {
+                    window.gtag("event", "download_resume", {
+                      event_category: "engagement",
+                    });
+                  }}
+                  className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900"
+                >
                   Download Resume
                 </button>
               </a>
