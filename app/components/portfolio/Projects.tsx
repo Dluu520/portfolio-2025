@@ -24,7 +24,7 @@ const projects: Project[] = [
       "A full-stack employee dashboard with CRUD workflows, search, and API-driven data management.",
     detailedDescription:
       "Built with Next.js and React, this project manages employee records through a responsive UI and MongoDB-backed API. It includes CRUD actions, filtering, and searchable employee records for practical internal-use workflows.",
-    demo: "https://employees-restful-api-example.vercel.app/",
+    demo: "https://employees-management-platform.vercel.app/",
     github: "https://github.com/Dluu520/employee-mangagement/tree/master",
     state: 1,
     tags: ["Next.js", "React", "MongoDB", "REST API"],
