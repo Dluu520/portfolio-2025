@@ -1,4 +1,4 @@
-# 🚀 Portfolio 2025
+# 🚀 Portfolio
 
 A modern, responsive developer portfolio built with **Next.js**, **React**, and **Tailwind CSS** to showcase my projects, technical skills, and professional experience.
 
