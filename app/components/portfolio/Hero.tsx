@@ -36,7 +36,7 @@ function Hero() {
 
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center px-6 text-center sm:px-8 lg:px-12">
         <div className="mb-4 rounded-full border border-blue-400/40 bg-blue-500/10 px-4 py-1.5 text-sm font-medium uppercase tracking-[0.3em] text-blue-200">
-          Recent CS Graduate • Full-Stack Web Developer • QA & Data Focus
+          Full-Stack Web Developer • QA & Data Focus
         </div>
 
         <h1 className="text-4xl font-extrabold tracking-wide text-white drop-shadow-lg sm:text-5xl md:text-7xl lg:text-8xl">

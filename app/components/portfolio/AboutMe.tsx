@@ -35,19 +35,18 @@ function AboutMe() {
 
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg sm:leading-8">
-                  Recent Bachelor of Science graduate with prior professional
-                  experience in full-stack web development and a technical
-                  customer-support background. I enjoy building dependable
-                  business applications and solving real-world workflow
-                  problems.
+                  Junior Developer with prior professional experience in
+                  full-stack web development and a technical customer-support
+                  background. I enjoy building dependable business applications
+                  and solving real-world workflow problems.
                 </p>
               </div>
             </div>
 
             <div className="mt-4 space-y-4">
               <p className="text-sm leading-7 text-slate-700 dark:text-slate-300 sm:text-base sm:leading-8">
-                I&apos;m interested in software quality assurance, software
-                development, and data analytics roles where technical problem
+                I&apos;m interested in software development, software quality
+                assurance, and data analytics roles where technical problem
                 solving, troubleshooting, communication, and attention to detail
                 are valued. My work spans frontend development, backend APIs,
                 database-backed systems, and practical business functionality.
