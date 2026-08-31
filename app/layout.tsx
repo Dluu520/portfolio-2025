@@ -15,8 +15,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dong Luu - Portfolio",
-  description: "Welcome to my portfolio website!",
+  metadataBase: new URL("https://portfolio-dluu-dev.vercel.app"),
+  title: "Dong Luu | Full-Stack Developer & QA/Data Focus",
+  description:
+    "Portfolio of Dong Luu, a recent Computer Science graduate with experience in full-stack web development, software QA, and data analytics-focused problem solving.",
+  keywords: [
+    "Dong Luu",
+    "Full-Stack Developer",
+    "Software Quality Assurance",
+    "Computer Science",
+    "Data Analytics",
+    "Portfolio",
+    "QA",
+  ],
+  openGraph: {
+    title: "Dong Luu | Full-Stack Developer & QA/Data Focus",
+    description:
+      "Recent Computer Science graduate with experience in software development, QA, and data analytics-focused work.",
+    url: "https://portfolio-dluu-dev.vercel.app",
+    siteName: "Dong Luu Portfolio",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

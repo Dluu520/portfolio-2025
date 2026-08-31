@@ -36,7 +36,7 @@ function Hero() {
 
       <div className="relative z-10 flex w-full max-w-5xl flex-col items-center px-6 text-center sm:px-8 lg:px-12">
         <div className="mb-4 rounded-full border border-blue-400/40 bg-blue-500/10 px-4 py-1.5 text-sm font-medium uppercase tracking-[0.3em] text-blue-200">
-          Full-Stack Developer • Aspiring Data Analyst
+          Recent CS Graduate • Full-Stack Web Developer • QA & Data Focus
         </div>
 
         <h1 className="text-4xl font-extrabold tracking-wide text-white drop-shadow-lg sm:text-5xl md:text-7xl lg:text-8xl">
@@ -44,9 +44,10 @@ function Hero() {
         </h1>
 
         <p className="mt-4 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg md:text-xl">
-          I build thoughtful web experiences and enjoy turning ideas into
-          practical digital products with clean code, strong UX, and a growing
-          data-driven mindset.
+          Recent 2026 graduate with professional experience in full-stack web
+          development and technical support. I enjoy building practical web
+          applications, working with data, and solving problems that make
+          systems easier to use and maintain
         </p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -74,20 +75,14 @@ function Hero() {
               Contact Me
             </button>
           </a>
+
           <a
-            href="Dong Luu -  Fullstack Developer Resume 2026.pdf"
-            download="Dong Luu -  Fullstack Developer Resume 2026.pdf"
+            href="/Dong_Luu_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-slate-300/40 bg-slate-900/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:text-base"
           >
-            <button
-              onClick={() => {
-                window.gtag("event", "resume_download", {
-                  event_category: "engagement",
-                });
-              }}
-              className="rounded-full border border-slate-300/40 bg-slate-900/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:text-base"
-            >
-              Download Resume
-            </button>
+            View Resume
           </a>
         </div>
 
@@ -125,10 +120,11 @@ function Hero() {
                     Projects
                   </button>
                 </a>
-                <a href="mailto:dong.luu520@gmail.com">
+                {/* <a href="mailto:dong.luu520@gmail.com"> */}
+                <a href="#contact">
                   <button
                     onClick={() => {
-                      window.gtag("event", "email", {
+                      window.gtag("event", "contact", {
                         event_category: "engagement",
                       });
                     }}
@@ -140,19 +136,12 @@ function Hero() {
               </div>
 
               <a
-                href="Dong Luu -  Fullstack Developer Resume 2026.pdf"
-                download="Dong Luu -  Fullstack Developer Resume 2026.pdf"
+                href="/Dong_Luu_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-slate-600 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:bg-slate-800"
               >
-                <button
-                  onClick={() => {
-                    window.gtag("event", "download_resume", {
-                      event_category: "engagement",
-                    });
-                  }}
-                  className="rounded-full border border-slate-600 px-4 py-2 text-sm text-white transition hover:border-white hover:bg-white hover:text-slate-900"
-                >
-                  Download Resume
-                </button>
+                View Resume
               </a>
             </div>
           ) : null}

@@ -3,6 +3,11 @@ import Image from "next/image";
 
 const certifications = [
   {
+    name: "Google Data Analytics Professional Certificate",
+    image: "/certs/coursera-cert.png",
+    link: "https://www.coursera.org/account/accomplishments/professional-cert/",
+  },
+  {
     name: "Flutter Mobile Development",
     image: "/certs/Flutter-Mobile-Applications-DevelopmentBadge.png",
     link: "https://www.credly.com/badges/51c9089c-cea8-4ca7-81b1-76b77c440a44/linked_in_profile",
@@ -17,21 +22,6 @@ const certifications = [
     image: "/certs/Verified Analytics Bootcamp Certification.png",
     link: "https://github.com/AlexTheAnalyst/Data-Analytics-Bootcamp/blob/main/README.md",
   },
-  {
-    name: "Foundations: Data, Data, Everywhere",
-    image: "/certs/coursera-cert.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/PJEZDDL74JUE",
-  },
-  {
-    name: "Prepare Data for Exploration",
-    image: "/certs/coursera-cert.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/77LL3MRHNBG5",
-  },
-  {
-    name: "Process Data from Dirty to Clean",
-    image: "/certs/coursera-cert.png",
-    link: "https://www.coursera.org/account/accomplishments/verify/BWX9RPBBHKOX",
-  },
 ];
 
 function Certifications() {
@@ -43,11 +33,11 @@ function Certifications() {
             Credentials
           </p>
           <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-            Certifications & Professional Links
+            Certifications & Professional Development
           </h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           {certifications.map((cert) => (
             <a
               key={cert.name}

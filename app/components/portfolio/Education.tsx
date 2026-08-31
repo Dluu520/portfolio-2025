@@ -4,38 +4,29 @@ function Education() {
   return (
     <section
       id="education"
-      className="flex-1 flex flex-col  items-center p-8 gap-6 bg-gradient-to-b from-gray-900"
+      className="flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8"
     >
-      <h1 className="text-4xl font-bold underline decoration-blue-500">
-        Education
-      </h1>
-      <div className="max-w-2xl text-lg">
-        <div className="flex justify-between font-bold">
-          <h1>University of Central Oklahoma</h1>
+      <div className="w-full max-w-4xl rounded-3xl border border-slate-700 bg-slate-900/80 p-6 shadow-lg backdrop-blur sm:p-8">
+        <div className="mb-6 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+            Education
+          </p>
+          <h2 className="mt-3 text-3xl font-bold underline decoration-blue-500 underline-offset-8 sm:text-4xl">
+            University of Central Oklahoma
+          </h2>
         </div>
-        <h2 className="text-lg font-semibold">
-          Bachelor of Science in Computer Science - Major GPA 3.00.
-        </h2>
-        <ul className="list-disc list-inside mt-4 space-y-2">
-          <li>
-            Relevant Coursework: Data Structures, Algorithms, Database
-            Management, Agile Development, Software Engineering, and Leadership.
-          </li>
-          <li>
-            Key Skills: Proficient in multiple programming languages, database
-            systems, and agile/scrum methodologies.
-          </li>
-          <li>
-            Scrum Master Experience: Led cross-functional teams as a Scrum
-            Master, responsible for creating project requirements, reviewing
-            goals, facilitating meetings, and ensuring timely delivery of
-            milestones.
-          </li>
-          <li>
-            Projects: Developed a web-based student enrollment system using PHP,
-            HTML, CSS, and SQL. Collaborated on a team-based CRM application.
-          </li>
-        </ul>
+
+        <div className="space-y-3 text-center sm:text-left">
+          <p className="text-2xl font-semibold text-white">
+            Bachelor of Science — Computer Science
+          </p>
+          <p className="text-base text-slate-300">Graduated May 8, 2026</p>
+          <p className="text-sm leading-7 text-slate-300 sm:text-base">
+            University of Central Oklahoma education and project experience have
+            supported my interest in software development, software quality
+            assurance, and data-focused problem solving.
+          </p>
+        </div>
       </div>
     </section>
   );

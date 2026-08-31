@@ -21,13 +21,13 @@ const projects: Project[] = [
     name: "Employee Management System",
     image: "/projects/employeeAPI.png",
     summary:
-      "A full-stack employee dashboard with CRUD workflows, search, and API-driven data management.",
+      "A business-oriented CRM and employee management application with scheduling, search, authentication, and database-backed workflows.",
     detailedDescription:
-      "Built with Next.js and React, this project manages employee records through a responsive UI and MongoDB-backed API. It includes CRUD actions, filtering, and searchable employee records for practical internal-use workflows.",
+      "Built with Next.js, React, TypeScript, Node.js, MongoDB, Mongoose, and Tailwind CSS, this project supports customer management, scheduling workflows, search and filtering, reusable UI components, and secure internal operations through a responsive dashboard.",
     demo: "https://employees-management-platform.vercel.app/",
-    github: "https://github.com/Dluu520/employee-mangagement/tree/master",
+    github: "https://github.com/Dluu520/employee-mangement/tree/master",
     state: 1,
-    tags: ["Next.js", "React", "MongoDB", "REST API"],
+    tags: ["Next.js", "React", "MongoDB", "REST API", "CRM"],
     category: "Full Stack",
   },
   {
@@ -112,8 +112,8 @@ function Projects() {
             Projects
           </h1>
           <p className="mx-auto max-w-2xl text-sm leading-7 text-slate-300 sm:text-base lg:mx-0">
-            A collection of web applications and interfaces focused on clean
-            design, practical functionality, and steady growth as a developer.
+            A selection of full-stack and front-end projects focused on business
+            workflows, practical product thinking, and clean application design.
           </p>
         </div>
 
@@ -216,6 +216,11 @@ function Modal({
 }) {
   if (!isOpen || !project) return null;
 
+  const caseStudyHref =
+    project.name === "Employee Management System"
+      ? "/projects/employee-management-system"
+      : undefined;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-6">
       <div className="w-full max-w-2xl rounded-3xl border border-slate-700 bg-slate-900 p-5 shadow-2xl sm:p-6">
@@ -301,6 +306,14 @@ function Modal({
               rel="noopener noreferrer"
             >
               View GitHub
+            </a>
+          )}
+          {caseStudyHref && (
+            <a
+              href={caseStudyHref}
+              className="rounded-xl border border-blue-500/50 bg-blue-500/10 px-4 py-2.5 text-center text-sm font-semibold text-blue-100 transition hover:bg-blue-500/20"
+            >
+              Case Study
             </a>
           )}
           <button

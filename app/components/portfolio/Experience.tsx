@@ -1,149 +1,97 @@
-/* eslint-disable */
-"use client";
 import React from "react";
-import styles from "@/app/ui/experience.module.css";
-import { useState } from "react";
 
 const experiences = [
   {
-    started: 2020,
-    ended: 2022,
-    position: "IT/Receptionist",
-    employer: "UCO LXstudio INC.",
-    jd: [
-      "Communicated directly with clients via email and in person to assess needs, ensuring accurate and timely delivery of supplies and assistance. Achieved a 95% client satisfaction rate by maintaining professionalism and responsiveness in all client interactions.",
-      "Coordinated campus-wide device maintenance and collaborated with team members to ensure systems were up-to-date, contributing to a 90% reduction in device-related issues across departments.",
-      " Diagnosed and resolved complex A/V and IT issues efficiently, cutting average downtime by 50%. Documented each issue in a ticketing system, improving troubleshooting processes and ensuring clear communication with technical support teams.",
+    period: "2023–2024",
+    position: "Full-Stack Web Developer",
+    employer: "Good Greek Moving & Storage",
+    type: "Professional Experience",
+    bullets: [
+      "Built and maintained full-stack business web applications using React, Next.js, TypeScript, Node.js, MongoDB, Mongoose, and Tailwind CSS.",
+      "Developed and maintained a CRM system for customer management, scheduling, and operational workflows.",
+      "Built reusable React components and responsive interfaces to improve consistency and usability across the application.",
+      "Designed and implemented REST APIs, database schemas, and Mongoose models for application data.",
+      "Implemented authentication and application functionality while troubleshooting front-end, backend, and database issues.",
+      "Worked in a two-person Agile development environment, participating in sprint planning, code reviews, and collaborative development using Git.",
     ],
   },
   {
-    started: 2022,
-    ended: 2023,
-    position: "Software Web Developer",
-    employer: "Good Greek Moving and Storage",
-    jd: [
-      "Optimized frontend code using React and Redux, achieving a 40% reduction in load times for single-page applications, improving user engagement and reducing bounce rates by 20%.",
-      "Reduced development cycles by 30% by implementing agile practices and automated testing with TypeScript and Jest, enabling faster production releases and minimizing bugs by 20%.",
-      "Optimized database queries with MongoDB, enhancing data retrieval speed by 40% for faster decision-making.",
-      "Designed and deployed intuitive UI components using MUI and custom CSS, elevating user satisfaction by 70% based on feedback. Leveraged MongoDB for efficient data handling, resulting in a 25% faster data retrieval time and a seamless, responsive user experience across all devices.",
+    period: "2020–2023",
+    position: "Techceptionist / Student Technology Support",
+    employer: "LXStudios Inc.",
+    type: "IT Support",
+    bullets: [
+      "Provided technology and operational support while assisting users and staff in a customer-facing environment.",
+      "Troubleshot technology-related issues, identified problems, and communicated practical solutions to users with varying levels of technical knowledge.",
+      "Worked through UCO's student-worker program, gaining experience supporting technology in a professional environment.",
+      "Shadowed field technicians to gain exposure to on-site technical service, troubleshooting, equipment, and field-support workflows.",
     ],
   },
   {
-    started: 2023,
-    ended: -1,
-    position: "Server",
-    employer: "Hunan Garden",
-    jd: [
-      "Strong interpersonal and communication skills to interact positively with guests.",
-      "Delivered excellent customer service, increasing repeat customer visits by 70% through attentive and personalized service.",
-      "Managed up to 7 tables per shift in a high-pressure environment, maintaining a 99% order accuracy rate.",
-      "Improved operational efficiency by prioritizing tasks and coordinating with the kitchen staff to reduce wait times by 20%.",
-      "Assisted with inventory stocking and product rotation, ensuring freshness and reducing waste by 10%.",
-      "Maintained compliance with health and safety standards by ensuring cleanliness and sanitation in all work areas.",
-      "Performed physically demanding tasks, including standing for 6-8 hours per shift, running, walking, and lifting trays or other materials up to 50 lbs.",
+    period: "2024–Present",
+    position: "Quick Service Associate / Server",
+    employer: "Universal Orlando Resort",
+    type: "Operations & Service",
+    bullets: [
+      "Worked in a high-volume operational environment requiring accuracy, reliability, teamwork, and effective communication.",
+      "Followed established procedures, managed multiple priorities, and resolved customer and operational issues while maintaining professional service.",
     ],
   },
 ];
 
 function Experience() {
-  const reversedList = experiences.slice().reverse();
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
-  const handleExpand = (index: any) => {
-    setExpandedIndex(index === expandedIndex ? null : index); // Toggle expansion
-  };
   return (
-    <div
-      className="flex-1 flex flex-col gap-10 justify-center items-center p-10 mt-32 
-    "
+    <section
+      id="experience"
+      className="flex min-h-screen items-center justify-center px-4 py-16 sm:px-6 lg:px-8"
     >
-      <div className="border-t-2 border-dotted border-gray-500 w-[80%]"></div>
-      <h1 className="flex text-4xl font-bold underline justify-center decoration-blue-500 mb-4">
-        Experience
-      </h1>
-      <span className={`${styles.timeline}  lg:w-1/2`}>
-        {reversedList.map((exp, index) => {
-          const positionClass = index % 2 === 0 ? styles.left : styles.right;
-          const isExpanded = expandedIndex === index; // Check if the current item is expanded
+      <div className="w-full max-w-5xl">
+        <div className="mb-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
+            Professional Background
+          </p>
+          <h2 className="mt-3 text-3xl font-bold underline decoration-blue-500 underline-offset-8 sm:text-4xl">
+            Experience
+          </h2>
+        </div>
 
-          return (
-            <ul
-              key={index}
-              className={`${styles.container} ${positionClass} ${
-                isExpanded ? styles.expanded : ""
-              } `}
-              onClick={() => handleExpand(index)}
+        <div className="space-y-6">
+          {experiences.map((exp) => (
+            <article
+              key={exp.position}
+              className="rounded-3xl border border-slate-700 bg-slate-900/80 p-6 shadow-lg backdrop-blur"
             >
-              <div
-                // className={`${styles.content} ${
-                //   isExpanded ? "expanded" : ""
-                // } text-[#2c3e50]  `}
-                className="border-2 border-gray-400 bg-white p-3"
-              >
-                <h2 className="text-[#2c3e50]">
-                  {exp.started} - {exp.ended === -1 ? "Current" : exp.ended}
-                </h2>
-                <h3 className="font-bold text-lg text-[#2c3e50]">
-                  {exp.position}
-                </h3>
-                {/* <ol>
-                  {exp.jd.map((each, jdIndex) => (
-                    <li key={jdIndex}>{each}</li>
-                  ))}
-                </ol> */}
+              <div className="mb-4 flex flex-col gap-3 border-b border-slate-700 pb-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                    {exp.period}
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold text-white">
+                    {exp.position}
+                  </h3>
+                  <p className="mt-1 text-base text-slate-300">
+                    {exp.employer}
+                  </p>
+                </div>
+                <span className="inline-flex w-fit rounded-full border border-blue-500/40 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-200">
+                  {exp.type}
+                </span>
               </div>
-            </ul>
-          );
-        })}
-      </span>
-    </div>
+
+              <ul className="space-y-3 text-sm leading-7 text-slate-300 sm:text-base">
+                {exp.bullets.map((bullet) => (
+                  <li key={bullet} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-400" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
-// function temp() {
-//   const reversedList = experiences.slice().reverse();
-//   const [expandedIndex, setExpandedIndex] = useState(null);
-
-//   const handleExpand = (index: any) => {
-//     setExpandedIndex(index === expandedIndex ? null : index); // Toggle expansion
-//   };
-
-//   return (
-//     <div className="flex-1 flex flex-col gap-10 justify-center items-center p-10 bg-gray-500">
-//       <h1 className="text-4xl underline font-bold">Experience</h1>
-//       <span className={styles.timeline}>
-//         {reversedList.map((exp, index) => {
-//           const positionClass = index % 2 === 0 ? styles.left : styles.right;
-//           const isExpanded = expandedIndex === index;
-
-//           return (
-//             <ul
-//               key={index}
-//               className={`${styles.container} ${positionClass} ${
-//                 isExpanded ? styles.expanded : ""
-//               }`}
-//               onClick={() => handleExpand(index)}
-//             >
-//               <div className={`${styles.content}`}>
-//                 <h2>
-//                   {exp.started} - {exp.ended === -1 ? "Current" : exp.ended}
-//                 </h2>
-//                 <h3 className="font-bold text-lg">{exp.position}</h3>
-//                 <p className="italic text-sm">{exp.employer}</p>
-//                 {/* Show details only if expanded */}
-//                 {isExpanded && (
-//                   <ol>
-//                     {exp.jd.map((each, jdIndex) => (
-//                       <li key={jdIndex}>{each}</li>
-//                     ))}
-//                   </ol>
-//                 )}
-//               </div>
-//             </ul>
-//           );
-//         })}
-//       </span>
-//     </div>
-//   );
-// }
 export default Experience;
