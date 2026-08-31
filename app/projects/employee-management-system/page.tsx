@@ -167,8 +167,6 @@ export default function EmployeeManagementCaseStudy() {
               combine into a useful business management tool.
             </p>
           </div>
-          <QASection />
-
           <div className="rounded-3xl border border-slate-700 bg-slate-900/80 p-6 shadow-lg">
             <h2 className="text-2xl font-semibold text-white">Links</h2>
             <div className="mt-4 flex flex-col gap-3">
@@ -188,6 +186,13 @@ export default function EmployeeManagementCaseStudy() {
               >
                 GitHub Repository
               </a>
+            </div>
+          </div>
+        </section>
+        <section className="grid gap-6 ">
+          <div className="overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/80 p-4 shadow-lg">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-slate-800">
+              <QASection />
             </div>
           </div>
         </section>
