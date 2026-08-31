@@ -1,3 +1,4 @@
+import QASection from "@/app/components/portfolio/QASection";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -166,6 +167,7 @@ export default function EmployeeManagementCaseStudy() {
               combine into a useful business management tool.
             </p>
           </div>
+          <QASection />
 
           <div className="rounded-3xl border border-slate-700 bg-slate-900/80 p-6 shadow-lg">
             <h2 className="text-2xl font-semibold text-white">Links</h2>

@@ -16,7 +16,7 @@ export default function Home() {
         <AboutMe />
         <Experience />
         <Projects />
-        <QASection />
+        {/* <QASection /> */}
         <Education />
         <ContactMe />
         <Footer />
